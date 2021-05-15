@@ -114,7 +114,7 @@ passport.deserializeUser(function(obj, cb) {
 passport.use(new GoogleStrategy({
     clientID: key.google.clientID,
     clientSecret: key.google.clientSecret,
-    callbackURL: "http://localhost:3000/auth/google/callback"
+    callbackURL: "https://tdtu-noticlone.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
       userProfile=profile;
