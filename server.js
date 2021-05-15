@@ -18,12 +18,12 @@ var mongoose = require('mongoose')
 var session = require('express-session')
 var passport = require('passport');
 
+// ####################### Server Setup ################################
+var app = express()
 
 ////////////////////////// Port setup/////////////////////////////////
 var PORT = process.env.port || 3000
-
-// ####################### Server Setup ################################
-var app = express()
+app.set("port", PORT)
 
 //######################## Passport setup ##############################	
 app.use(passport.initialize());
