@@ -22,7 +22,7 @@ var passport = require('passport');
 var app = express()
 
 ////////////////////////// Port setup/////////////////////////////////
-var PORT = process.env.port || 3000
+//var PORT = process.env.port || 3000
 
 //######################## Passport setup ##############################	
 app.use(passport.initialize());
@@ -65,6 +65,7 @@ app.use('/:route', (req, res) =>{
     res.render('error', {'title': 'We are sorry for this uncertainty but', 'page_name': route, 'error_message': 'is somewhere on the Moon 🌕'})
 })
 
-var server = app.listen(PORT, () =>{
-    console.log("The server is now running at http://localhost:" + PORT);
+
+var server = app.listen(process.env.PORT || 3000, () =>{
+    //console.log("The server is now running at http://localhost:" + PORT);
 })
