@@ -23,7 +23,6 @@ var app = express()
 
 ////////////////////////// Port setup/////////////////////////////////
 var PORT = process.env.port || 3000
-app.set("port", PORT)
 
 //######################## Passport setup ##############################	
 app.use(passport.initialize());
