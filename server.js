@@ -67,5 +67,5 @@ app.use('/:route', (req, res) =>{
 
 
 var server = app.listen(process.env.PORT || 3000, () =>{
-    //console.log("The server is now running at http://localhost:" + PORT);
+    console.log("The server is now running at http://localhost:" + 3000);
 })

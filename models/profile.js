@@ -2,6 +2,7 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 profileSchema = new Schema( {
+    googleID: String,
 	displayname: String,
     class: String,
     dean: String

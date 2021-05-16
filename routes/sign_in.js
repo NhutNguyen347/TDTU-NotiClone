@@ -62,7 +62,7 @@ router.post('/login', (req, res) => {
                 let data_role = data[0].role
                 let data_uid = data[0]._id
 
-                // console.log('unique id here is' + data_uid)
+                //console.log('unique id here is' + data_uid)
                 // console.log('role from return data is ' + data_role)
 
                 // Check if it is admin
@@ -108,12 +108,11 @@ passport.deserializeUser(function(obj, cb) {
 	cb(null, obj);
 });
 
-// Basically, replace these 2 fields with your gg client id and secret key
-// const GOOGLE_CLIENT_ID = '1615839175-s2nldpmf4t4l2o60d4saqpn72v10qaj5.apps.googleusercontent.com';
-// const GOOGLE_CLIENT_SECRET = 'YrlNs-98zLycrtSABaKZ4SvT';
 passport.use(new GoogleStrategy({
     clientID: key.google.clientID,
     clientSecret: key.google.clientSecret,
+    //"https://tdtu-noticlone.herokuapp.com/auth/google/callback"
+    //"http://localhost:3000/auth/google/callback"
     callbackURL: "https://tdtu-noticlone.herokuapp.com/auth/google/callback"
   },
   function(accessToken, refreshToken, profile, done) {
@@ -151,7 +150,7 @@ router.get('/auth/google/callback',
                 var new_user = new User({googleID: userProfile.id, email: userProfile.emails[0].value, role: 0})
                 
                 //create profile schema
-                var new_profile = new Profile({displayname: userProfile.displayName, class: 'Class01', dean: 'Dean01'})
+                var new_profile = new Profile({googleID: userProfile.id, displayname: userProfile.displayName, class: 'Class01', dean: 'Dean01'})
                 // create new profile schema
                 // save user
                 new_user.save((err, collection) => {
