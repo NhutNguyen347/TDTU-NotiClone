@@ -141,7 +141,7 @@
 								<div class="nav nav-tabs" id="nav-tab" role="tablist">
 								    <a class="nav-item nav-link active" id="nav-acc-tab" data-toggle="tab" href="#nav-acc" role="tab" aria-controls="nav-acc" aria-selected="true"><i class="la la-cogs"></i>Account Setting</a>
 								    <!-- <a class="nav-item nav-link" id="nav-status-tab" data-toggle="tab" href="#nav-status" role="tab" aria-controls="nav-status" aria-selected="false"><i class="fa fa-line-chart"></i>Status</a> -->
-								    <a class="nav-item nav-link" id="nav-password-tab" data-toggle="tab" href="#nav-password" role="tab" aria-controls="nav-password" aria-selected="false"><i class="fa fa-lock"></i>Change Password</a>
+								    <!-- <a class="nav-item nav-link" id="nav-password-tab" data-toggle="tab" href="#nav-password" role="tab" aria-controls="nav-password" aria-selected="false"><i class="fa fa-lock"></i>Change Password</a> -->
 								    <!-- <a class="nav-item nav-link" id="nav-notification-tab" data-toggle="tab" href="#nav-notification" role="tab" aria-controls="nav-notification" aria-selected="false"><i class="fa fa-flash"></i>Notifications</a>
 								    <a class="nav-item nav-link" id="nav-requests-tab" data-toggle="tab" href="#nav-requests" role="tab" aria-controls="nav-requests" aria-selected="false"><i class="fa fa-group"></i>Requests</a>
 								    <a class="nav-item nav-link" id="security-login" data-toggle="tab" href="#security-login" role="tab" aria-controls="security-login" aria-selected="false"><i class="fa fa-user-secret"></i>Security and Login</a>
@@ -157,32 +157,25 @@
 									<div class="acc-setting">
 										<h3>Account Setting</h3>
 										<!-- Nhut changed original account setting to a functional one -->
-										<form>
+										<form method="POST">
 											<div class="cp-field">
-												<h5>First Name</h5>
+												<h5>Display Name</h5>
 												<div class="cpp-fiel">
-													<input type="text" name="firstname" placeholder="First name">
-													<i class="fa fa-barcode"></i>
-												</div>
-											</div>
-											<div class="cp-field">
-												<h5>Last Name</h5>
-												<div class="cpp-fiel">
-													<input type="text" name="lastname" placeholder="Last Name">
+													<input type="text" name="displayName" placeholder="Your display name" value="<%= locals.displayName%>">
 													<i class="fa fa-barcode"></i>
 												</div>
 											</div>
 											<div class="cp-field">
 												<h5>Class</h5>
 												<div class="cpp-fiel">
-													<input type="text" name="class" placeholder="Class Code">
+													<input type="text" name="class" placeholder="Class Code" value="<%= locals.class%>">
 													<i class="fa fa-barcode"></i>
 												</div>
 											</div>
 											<div class="cp-field">
 												<h5>Dean</h5>
 												<div class="cpp-fiel">
-													<input type="text" name="dean" placeholder="Dean name">
+													<input type="text" name="dean" placeholder="Dean name" value="<%= locals.dean%>">
 													<i class="fa fa-barcode"></i>
 												</div>
 											</div>
@@ -254,38 +247,7 @@
 							  			</div><!--pro-work-status end-->
 							  		</div><!--acc-setting end-->
 							  	</div>
-							  	<div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
-							  		<div class="acc-setting">
-										<div class="tab-pane fade show active" id="nav-acc" role="tabpanel" aria-labelledby="nav-acc-tab">
-											<div class="acc-setting">
-												<h3>Password Setting</h3>
-												<!-- Nhut changed original account setting to a functional one -->
-												<form>
-													<div class="cp-field">
-														<h5>New Password</h5>
-														<div class="cpp-fiel">
-															<input type="text" name="newPassword" placeholder="New Password">
-															<i class="fa fa-lock"></i>
-														</div>
-													</div>
-													<div class="cp-field">
-														<h5>Confirm new password</h5>
-														<div class="cpp-fiel">
-															<input type="text" name="confirmPass" placeholder="Retype new password">
-															<i class="fa fa-lock"></i>
-														</div>
-													</div>
-													
-													<div class="save-stngs pd2">
-														<ul>
-															<li><button type="submit">Save Setting</button></li>
-														</ul>
-													</div><!--save-stngs end-->
-												</form>
-											</div><!--acc-setting end-->
-										</div>
-									</div><!--acc-setting end-->
-							  	</div>
+							  	
 							  	<div class="tab-pane fade" id="nav-notification" role="tabpanel" aria-labelledby="nav-notification-tab">
 							  		<div class="acc-setting">
 							  			<h3>Notifications</h3>
