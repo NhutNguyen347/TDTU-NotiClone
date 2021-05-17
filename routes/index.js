@@ -12,7 +12,10 @@ router.get('/index', (req, res) => {
                     res.json(err)
                 }
                 else{
-                    res.render('index', {displayName: data.displayname, class: data.class, dean: data.dean})
+                    // shorten dean name
+                    var new_dean = data.dean
+                    if(new_dean.length > 20){ new_dean = new_dean.slice(0, 20).concat('...') }
+                    res.render('index', {displayName: data.displayname, class: data.class, dean: new_dean})
                 }
             })
         }
