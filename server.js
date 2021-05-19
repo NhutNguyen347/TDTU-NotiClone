@@ -35,6 +35,9 @@ app.set('view engine', 'ejs')
 ///////////////////////// Connect to MongoDB ////////////////////////////
 var db_connection = require('./config/db')
 
+///////////////////////// CLOUDINARY SETUP ///////////////////////////////
+var cloudinary_conn = require('./config/cloudinary')
+
 ///////////////////////// Setup Express Session ////////////////////////////
 app.use(session({
 

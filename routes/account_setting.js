@@ -3,6 +3,27 @@ var express = require('express')
 var router = express.Router()
 var check_session = require('../functions/check_session')
 var bodyParser = require('body-parser')
+// For Profile picture upload
+var cloudinary = require('cloudinary')
+var multer = require('multer')
+
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+
+const storage = new CloudinaryStorage({
+    cloudinary: cloudinary,
+    params: {
+        folder: "UserPictures",
+        allowedFormats: ["jpg", "png"],
+        transformation: [{
+            width: 500,
+            height: 500,
+            crop: "limit"
+        }]
+    }
+})
+// Image Storing
+var parser = multer({storage: storage})
+// End of profile picture upload
 
 router.use(express.static("views"))
 
