@@ -15,8 +15,10 @@ router.get('/login', (req,res) => {
     // If session is set, go to index
     if(req.session.userId){
         // Check role to redirect to correct page tho
-        if(req.session.userRole == 1 || req.session.userRole == 0)
+        if(req.session.userRole == 0)
             return res.redirect('/index')
+        else if(req.session.userRole == 1)
+            return res.redirect('/dean_index')
         else if(req.session.userRole == 2)
             return res.redirect('/admin')
     }
@@ -54,7 +56,7 @@ router.post('/login', (req, res) => {
         User.find({username: username},function(err,data){
             // Data with Json array always returns even if it is empty so catch the length too
             if(data && data.length != 0){
-                console.log(data)
+                //console.log(data)
                 
                 //The return type of the result here is an array of JSON so to access to it properly, put the index in.
                 let data_un = data[0].username

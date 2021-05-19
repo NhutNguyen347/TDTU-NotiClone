@@ -3,6 +3,7 @@ var router = express.Router()
 
 router.use(express.static("views"))
 
+/////////////////////////////////// STUDENT(USER) IDNEX //////////////////////////////////////
 router.get('/index', (req, res) => {
     if(req.session.userId){
         // For student
@@ -21,7 +22,7 @@ router.get('/index', (req, res) => {
         }
         // For Dean
         else if(req.session.userRole == 1){
-            res.render('index', {displayName: '', class: '', dean: ''})
+            res.redirect('/dean_index')
         }
         
 	}

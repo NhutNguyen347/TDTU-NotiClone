@@ -3,9 +3,9 @@ var express = require('express')
 var router = express.Router()
 var check_session = require('../functions/check_session')
 var bodyParser = require('body-parser')
+
 // For Profile picture upload
 var multer = require('multer')
-
 const cloudinary = require('cloudinary').v2
  
 const { CloudinaryStorage } = require('multer-storage-cloudinary');

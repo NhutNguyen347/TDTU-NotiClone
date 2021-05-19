@@ -4,6 +4,8 @@ var sign_out = require('./routes/sign_out.js')
 var index = require('./routes/index.js')
 var admin = require('./routes/admin.js')
 var accountSetting = require('./routes/account_setting.js')
+var deanAccountSetting = require('./routes/dean_account_setting')
+var dean_index = require('./routes/dean_index')
 
 // DB Models import
 var User = require('./models/user')
@@ -66,6 +68,9 @@ app.all('/admin', admin)
 app.all('/proSet', accountSetting)
 app.all('/add_user_page',admin)
 app.all('/new_user',admin)
+app.all('/dean_index', dean_index)
+app.all('/deanProSet', deanAccountSetting)
+
 /////////////////////// 404 Handler //////////////////////////////////
 app.use('/:route', (req, res) =>{
     var route = req.params.route

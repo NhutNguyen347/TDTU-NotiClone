@@ -138,11 +138,7 @@
 					</div><!--menu-btn end-->
 					<div class="user-account">
 						<div class="user-info">
-							<% if(locals.data.imageurl != undefined) { %>
-								<img src="<%= locals.data.imageurl%>" alt="" width="30px" height="30px">
-							<% } else{ %>
-								<img src="http://via.placeholder.com/30x30" alt="">
-							<% } %>
+							<img src="http://via.placeholder.com/30x30" alt="">
 							<a href="#" title=""><%= locals.data.displayname.slice(0, 5).concat('...')%></a>
 							<!-- <i class="la la-sort-down"></i> -->
 						</div>
@@ -170,7 +166,7 @@
 							</ul> -->
 							<h3>Setting</h3>
 							<ul class="us-links">
-								<li><a href="/proSet" title="">Account Setting</a></li>
+								<li><a href="/deanProSet" title="">Account Setting</a></li>
 								<li><a href="#" title="">Privacy</a></li>
 								<li><a href="#" title="">Faqs</a></li>
 								<li><a href="#" title="">Terms & Conditions</a></li>
@@ -194,7 +190,7 @@
 											<div class="username-dt">
 												<div class="usr-pic">
 													<% if(locals.data.imageurl != undefined) { %>
-														<img src="<%= locals.data.imageurl%>" alt="" width="100px" height="110px">
+														<img src="<%= locals.data.imageurl%>" alt="">
 													<% } else {%>
 														<img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png" alt="">
 													<% } %>
@@ -202,7 +198,7 @@
 											</div><!--username-dt end-->
 											<div class="user-specs">
 												<h3><%= locals.data.displayname%></h3>
-												<span><%= locals.data.class%> - <%= locals.data.dean%></span>
+												<!-- <span><%= locals.data.class%> - <%= locals.data.dean%></span> -->
 											</div>
 										</div><!--user-profile end-->
 										<ul class="user-fw-status">
@@ -290,11 +286,7 @@
 								<div class="main-ws-sec">
 									<div class="post-topbar">
 										<div class="user-picy">
-											<% if(locals.data.imageurl != undefined) { %>
-												<img src="<%= locals.data.imageurl%>" alt="" width="50px" height="50px">
-											<% } else{ %>
-												<img src="http://via.placeholder.com/100x100" alt="">
-											<% } %>
+											<img src="http://via.placeholder.com/100x100" alt="">
 										</div>
 										<div class="post-st">
 											<ul>
