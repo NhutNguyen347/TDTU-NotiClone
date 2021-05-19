@@ -157,25 +157,26 @@
 									<div class="acc-setting">
 										<h3>Account Setting</h3>
 										<!-- Nhut changed original account setting to a functional one -->
-										<form method="POST">
+										<!-- always give it a enctype if you want your function to read file the right way -->
+										<form method="POST" enctype="multipart/form-data">
 											<div class="cp-field">
 												<h5>Display Name</h5>
 												<div class="cpp-fiel">
-													<input type="text" name="displayName" placeholder="Your display name" value="<%= locals.displayName%>">
+													<input type="text" name="displayName" placeholder="Your display name" value="<%= locals.data.displayname%>">
 													<i class="fa fa-barcode"></i>
 												</div>
 											</div>
 											<div class="cp-field">
 												<h5>Class</h5>
 												<div class="cpp-fiel">
-													<input type="text" name="class" placeholder="Class Code" value="<%= locals.class%>">
+													<input type="text" name="class" placeholder="Class Code" value="<%= locals.data.class%>">
 													<i class="fa fa-barcode"></i>
 												</div>
 											</div>
 											<div class="cp-field">
 												<h5>Dean</h5>
 												<div class="cpp-fiel">
-													<input type="text" name="dean" placeholder="Dean name" value="<%= locals.dean%>">
+													<input type="text" name="dean" placeholder="Dean name" value="<%= locals.data.dean%>">
 													<i class="fa fa-barcode"></i>
 												</div>
 											</div>
@@ -183,10 +184,11 @@
 											<div class="cp-field">
 												<h5>Profile picture</h5>
 												<div class="cpp-fiel">
-													<input type="file" name="image">
+													<input type="file" name="profilePicture">
 													<i class="fa fa-image"></i>
 												</div>
 											</div>
+											
 											<div class="save-stngs pd2">
 												<ul>
 													<li><button type="submit">Save Setting</button></li>

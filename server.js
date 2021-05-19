@@ -28,15 +28,20 @@ var app = express()
 app.use(passport.initialize());
 app.use(passport.session());
 
+////////////////////////// CLOUDINARY CONFIG ///////////////////////////
+const cloudinary = require('cloudinary').v2;
+ 
+cloudinary.config({
+    cloud_name: "dup5vuryj",
+    api_key: "254592227425713",
+    api_secret: "5Lo9nzwORU9bg0mvRpxgmEgFibc"
+})
 
 ///////////////////////// App Setup///////////////////////////////////
 app.set('view engine', 'ejs')
 
 ///////////////////////// Connect to MongoDB ////////////////////////////
 var db_connection = require('./config/db')
-
-///////////////////////// CLOUDINARY SETUP ///////////////////////////////
-var cloudinary_conn = require('./config/cloudinary')
 
 ///////////////////////// Setup Express Session ////////////////////////////
 app.use(session({
