@@ -14,8 +14,7 @@ router.get('/index', (req, res) => {
                 }
                 else{
                     // shorten dean name
-                    var new_dean = data.dean
-                    if(new_dean.length > 20){ new_dean = new_dean.slice(0, 20).concat('...') }
+                    if(data.dean.length > 20){ data.dean = data.dean.slice(0, 20).concat('...') }
                     res.render('index', {data: data})
                 }
             })
