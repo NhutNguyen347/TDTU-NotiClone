@@ -41,6 +41,8 @@ cloudinary.config({
 
 ///////////////////////// App Setup///////////////////////////////////
 app.set('view engine', 'ejs')
+app.use(express.static("views"))
+app.use(express.static("views/admin"))
 
 ///////////////////////// Connect to MongoDB ////////////////////////////
 var db_connection = require('./config/db')
@@ -66,8 +68,8 @@ app.all('/index', index)
 app.all('/logout', sign_out)
 app.all('/admin', admin)
 app.all('/proSet', accountSetting)
-app.all('/add_user_page',admin)
-app.all('/new_user',admin)
+app.all('/addDean',admin)
+//app.all('/new_user',admin)
 app.all('/dean_index', dean_index)
 app.all('/deanProSet', deanAccountSetting)
 
