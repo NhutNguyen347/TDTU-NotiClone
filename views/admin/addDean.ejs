@@ -134,7 +134,7 @@
                             </a>
                         </li>
                         <li class="sidebar-item">
-                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="addDean.html"
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/addDean"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="hide-menu">Deans Manager</span>
@@ -237,13 +237,16 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td></td>
-                                            <td>Deshmukh</td>
-                                            <td>Prohaska</td>
-                                            <td>@Genelia</td>
-                                            <td>admin</td>
-                                        </tr>
+                                        <% locals.data_pass.forEach(function(data) { %>
+                                            <tr>
+                                                <td></td>
+                                                <td><%= data._id%></td>
+                                                <td><%= data.displayname%></td>
+                                                <td><%= data.username%></td>
+                                                <td><%= data.password%></td>
+                                                <td>Dean/ Department</td>
+                                            </tr>
+                                        <% }) %>
                                         
                                     </tbody>
                                 </table>
@@ -290,9 +293,9 @@
             <!-- ============================================================== -->
             <!-- footer -->
             <!-- ============================================================== -->
-            <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
+            <!-- <footer class="footer text-center"> 2021 © Ample Admin brought to you by <a
                     href="https://www.wrappixel.com/">wrappixel.com</a>
-            </footer>
+            </footer> -->
             <!-- ============================================================== -->
             <!-- End footer -->
             <!-- ============================================================== -->

@@ -37,15 +37,34 @@ router.get('/admin', (req, res) => {
     
 })
 
-router.get('/addDean',(req,res)=>{
-    if(check_session_admin(req) == 1){
-        res.render('admin/addDean');
-	}
-    else{
-        res.redirect('/login')
-    }
-})
+router.get('/addDean' , (req , res)=>{
 
+    var data_p = []
+    // Write code to check session role = 2 - admin or not
+    User.find({role: 1}) // async call
+    .then(function (data) {
+        // Collection id out from data
+        var ids = []
+
+        for(i = 0; i < data.length; i++){
+            ids.push(data[i]._id)
+        }
+
+        // Look and bind displaynames to data_pass
+        var data_pass = data
+
+        Profile.find({deanID: ids}).then(function(profile){
+            for(i = 0; i < profile.length; i++){
+                // Gotta have to define a new field in UserSchema in user model
+                data_pass[i].displayname = profile[i].displayname
+            }
+
+            res.render('admin/addDean', {data_pass})
+        })
+        
+    });
+
+})
 router.post('/addDean' , (req , res)=>{
     var body = req.body
 
@@ -58,7 +77,7 @@ router.post('/addDean' , (req , res)=>{
     
     new_profile.save()
 
-    res.redirect('/admin')
+    res.redirect('/addDean')
 })
 
 module.exports = router
