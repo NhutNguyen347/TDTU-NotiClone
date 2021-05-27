@@ -12,7 +12,13 @@ userSchema = new Schema( {
 	username: String,
 	password: String,
 	role: Number,
-	displayname: String
+	displayname: String,
+    // posts' ids 
+	posts: [
+		{
+			type: String,
+		}
+	]
 }, {collection: 'user'}),
 
 // model is very important, point to the right database(model) name to get access correctly

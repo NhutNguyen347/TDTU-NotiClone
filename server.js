@@ -10,6 +10,7 @@ var dean_index = require('./routes/dean_index')
 // DB Models import
 var User = require('./models/user')
 var Profile = require('./models/profile')
+var Post = require('./models/post')
 
 // Oauth key
 var key = require('./config/key')
@@ -72,6 +73,8 @@ app.all('/addDean',admin)
 //app.all('/new_user',admin)
 app.all('/dean_index', dean_index)
 app.all('/deanProSet', deanAccountSetting)
+// Delete post
+app.all('/deletePost', index)
 
 /////////////////////// 404 Handler //////////////////////////////////
 app.use('/:route', (req, res) =>{
