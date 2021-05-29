@@ -218,12 +218,11 @@ $(window).on("load", function() {
 
     //  ================== Edit Options Function =================
 
-
-    $(".ed-opts-open").on("click", function(){
+    //Nhut add toggle effect for dropdown list added by AJAX
+    $(document).on('click','.ed-opts-open',function(){
         $(this).next(".ed-options").toggleClass("active");
         return false;
-    });
-
+    })
 
     // ============== Menu Script =============
 
@@ -306,5 +305,4 @@ $(window).on("load", function() {
 
 
 });
-
 

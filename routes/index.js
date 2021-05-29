@@ -107,4 +107,13 @@ router.post('/deletePost', (req, res) => {
     })
 })
 
+router.post('/editPost', (req, res) => {
+    var post_id = req.body.post_id
+
+    console.log(post_id)
+    Post.findOne({_id: post_id}).then(function(data){
+        res.send(data)
+    })
+})
+
 module.exports = router

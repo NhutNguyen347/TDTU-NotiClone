@@ -75,6 +75,8 @@ app.all('/dean_index', dean_index)
 app.all('/deanProSet', deanAccountSetting)
 // Delete post
 app.all('/deletePost', index)
+//Edit post
+app.all('/editPost', index)
 
 /////////////////////// 404 Handler //////////////////////////////////
 app.use('/:route', (req, res) =>{
