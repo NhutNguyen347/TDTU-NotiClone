@@ -39,7 +39,7 @@ router.post('/login', (req, res) => {
     // Simple Form validation
     let {username, password} = req.body
 
-    console.log(username + " " + password)
+    // console.log(username + " " + password)
 
     let error = undefined
 
@@ -136,7 +136,7 @@ router.get('/auth/google/callback',
         // Check in Database if the user is there or not with googleID
         User.find({googleID: userProfile.id}, (err, data) => {
             if(err){
-            return console.log(err)
+                return console.log(err)
             }
             else{
             // If the user is there already, move to index page
