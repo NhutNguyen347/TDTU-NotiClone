@@ -1,4 +1,4 @@
-$(document).ready( () => {
+$(document).ready(() => {
     $("#postButton").click((event) => {
         //stop submit the form, we will post it manually.
         event.preventDefault();
@@ -58,29 +58,6 @@ function doAjax() {
         },
         error: (e) => {
             $("#confirmMsg").text(e.responseText);
-        }
-    });
-}
-
-function delPost() {
-    // a tag has no attr value so we should use attr() here to read it out
-    var post_id = $('#delLink').attr("value")
-
-    $.ajax({
-        type: "POST",
-        url:'/deletePost',
-        data: {post_id: post_id},
-        success:function(response){
-            if(response){
-                // Remove the whole div contains new post 
-                $('div[post_id="'+post_id+'"]').remove()
-                console.log('Post deleted')
-            }else{
-                console.log('data cannot be deleted');
-            }
-        },
-        error:function(response){
-            console.log('Server error')
         }
     });
 }
