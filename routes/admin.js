@@ -11,24 +11,23 @@ router.get('/admin', (req, res) => {
     // Check Session userId with 
     if(check_session_admin(req) == 1){
         //Collect all users from users collection
-        User.find({}, (err, data) => {
-            if(err) console.log(err)
-            else{
+        User.find({}).then(function(data){
+            function numCounter(role){
+                var count = 0
 
-                function numCounter(role){
-                    var count = 0
-
-                    for(i = 0; i < data.length; i++){
-                        if(data[i].role == role){
-                            count = count + 1
-                        }
+                for(i = 0; i < data.length; i++){
+                    if(data[i].role == role){
+                        count = count + 1
                     }
-
-                    return count
                 }
 
-                res.render('admin/dashboard',  {numUsers: numCounter(0), numDean: numCounter(1)})
+                return count
             }
+
+            // Get number of Posts
+            Post.find({}).then(function(posts){
+                res.render('admin/dashboard',  {numUsers: numCounter(0), numDean: numCounter(1), numPost: posts.length})
+            })
         })
 	}
     else{
