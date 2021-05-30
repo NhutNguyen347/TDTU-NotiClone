@@ -49,6 +49,10 @@ app.use(express.static("views/admin"))
 var db_connection = require('./config/db')
 
 ///////////////////////// Setup Express Session ////////////////////////////
+// Session will expire after 1 day
+var date = new Date()
+var expireDate = date.setDate(date.getDate() + 1)
+
 app.use(session({
 
 	// It holds the secret key for session
@@ -60,7 +64,10 @@ app.use(session({
 
 	// Forces a session that is "uninitialized"
 	// to be saved to the store
-	saveUninitialized: false
+	saveUninitialized: false, 
+
+    // Setup session expire
+    expires: expireDate
 }))
 
 ///////////////////////// Middleware Setup ////////////////////////////
