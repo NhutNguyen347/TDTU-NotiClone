@@ -116,4 +116,10 @@ router.post('/editPost', (req, res) => {
     })
 })
 
+router.post('/submitEdit' , (req , res)=>{
+
+    console.log(req.body.title)
+
+})
+
 module.exports = router

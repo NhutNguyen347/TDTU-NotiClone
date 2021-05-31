@@ -110,3 +110,25 @@ $(document).on("click", "#editLink", function(){
         }
     });
 })
+
+/////////////////////////////////////////////// Submit post edit result //////////////////////////////////////
+$('#editForm').ready(function(){
+    $('#editForm').on("click", "#editButton", function(e){
+        e.preventDefault();
+
+        var form = $('#editForm')[0];
+	    var data = new FormData(form);
+
+        console.log(data.get('title'))
+        console.log(data.get('description'))
+
+        post_infor = {title: data.get('title'), desc: data.get('description')}
+
+        $.ajax({
+            type: "POST",
+            enctype: 'multipart/form-data',
+            url:'/submitEdit',
+            data: post_infor
+        });
+    })
+})
