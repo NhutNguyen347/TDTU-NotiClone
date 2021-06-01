@@ -87,8 +87,9 @@ $(document).on("click", "#delLink", function(){
 })
 
 //////////////////////////////////////// Edit Post by AJAX ///////////////////////////
+var post_id = undefined
 $(document).on("click", "#editLink", function(){
-    var post_id = $(this).parent().find('#editLink').attr("value")
+    post_id = $(this).parent().find('#editLink').attr("value")
 
     $.ajax({
         type: "POST",
@@ -115,20 +116,53 @@ $(document).on("click", "#editLink", function(){
 $('#editForm').ready(function(){
     $('#editForm').on("click", "#editButton", function(e){
         e.preventDefault();
-
         var form = $('#editForm')[0];
-	    var data = new FormData(form);
+        var data = new FormData(form);
 
-        console.log(data.get('title'))
-        console.log(data.get('description'))
-
-        post_infor = {title: data.get('title'), desc: data.get('description')}
+        data.append("post_id", post_id)
 
         $.ajax({
             type: "POST",
             enctype: 'multipart/form-data',
-            url:'/submitEdit',
-            data: post_infor
+            url: "/submitEdit",
+            data: data,
+            processData: false, //prevent jQuery from automatically transforming the data into a query string
+            contentType: false,
+            cache: false,
+            success: (data) => {      
+                $(document).ready(function(){
+                    // Change title and description from posts 
+                    $('.posty[post_id="'+post_id+'"]').find('.job_descp > h3').text(data.title)
+                    $('.posty[post_id="'+post_id+'"]').find('.job_descp > p').text(data.description)
+                    // post update for posts loaded by ejs
+                    // This is to check if img is there or not, this is for post by ejs
+                    if($('.posty[post_id="'+post_id+'"]').find('.job_descp > img').ready() && data.img !== undefined){
+                        // Remove style of the current post without img, it will skip if there is no attr named style, kinda tidy
+                        $('.posty[post_id="'+post_id+'"]').find('.job_descp > img').removeAttr("style")
+                        $('.posty[post_id="'+post_id+'"]').find('.job_descp > img').attr("src", data.img)
+                    }
+                
+                    // This is to check if iframe is there or not, this is for post by ejs
+                    if($('.posty[post_id="'+post_id+'"]').find('.job_descp > iframe').ready() && data.url_video !== undefined){
+                        // Remove style of the current post without img, it will skip if there is no attr named style, kinda tidy
+                        $('.posty[post_id="'+post_id+'"]').find('.job_descp > iframe').removeAttr("style")
+                        $('.posty[post_id="'+post_id+'"]').find('.job_descp > iframe').attr("src", "https://www.youtube.com/embed/" + data.url_video)
+                    }
+                    
+                    // update img for posts posted by ajax
+                    if(data.img !== undefined){
+                        $('div[id=posty_ajax][post_id='+post_id+'] div[class=job_descp] div[id=img]').html('<img alt="" src="'+data.img+'"/>')
+                    }
+
+                    // update video link for posts posted by ajax
+                    if(data.url_video !== undefined){
+                        $('div[id=posty_ajax][post_id='+post_id+'] div[class=job_descp] div[id=url_video]').html('<iframe title="yb_video" width="500" height="300" src="https://www.youtube.com/embed/'+data.url_video+'" frameborder="0">')
+                    }
+                })
+            },
+            error: (e) => {
+                $("#confirmMsg").text(e.responseText);
+            }
         });
     })
 })
