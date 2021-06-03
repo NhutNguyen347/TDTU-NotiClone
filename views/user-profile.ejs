@@ -30,18 +30,18 @@
 			<div class="container">
 				<div class="header-data">
 					<div class="logo">
-						<a href="index.html" title=""><img src="images/index_logo.png" alt=""></a>
+						<a href="/index" title=""><img src="images/index_logo.png" alt=""></a>
 					</div><!--logo end-->
 					<div class="search-bar">
 						<form>
-							<input type="text" name="search" placeholder="Search...">
+							<input class="typeahead" type="text" name="search" placeholder="Search...">
 							<button type="submit"><i class="la la-search"></i></button>
 						</form>
 					</div><!--search-bar end-->
 					<nav>
 						<ul>
 							<li>
-								<a href="index.html" title="">
+								<a href="/index" title="">
 									<span><img src="images/icon1.png" alt=""></span>
 									Home
 								</a>
@@ -183,16 +183,16 @@
                                                 <div class="user-profile">
                                                     <div class="username-dt">
                                                         <div class="usr-pic">
-                                                            <% if(locals.data[0].imageurl != undefined) { %>
-                                                                <img src="<%= locals.data[0].imageurl%>" alt="" width="100px" height="110px">
+                                                            <% if(locals.data.imageurl != undefined) { %>
+                                                                <img src="<%= locals.data.imageurl%>" alt="" width="100px" height="110px">
                                                             <% } else {%>
                                                                 <img src="https://www.pngkey.com/png/full/73-730477_first-name-profile-image-placeholder-png.png" alt="">
                                                             <% } %>
                                                         </div>
                                                     </div><!--username-dt end-->
                                                     <div class="user-specs">
-                                                        <h3><%= locals.data[0].displayname%></h3>
-                                                        <span><%= locals.data[0].class%> - <%= locals.data[0].dean%></span>
+                                                        <h3><%= locals.data.displayname%></h3>
+                                                        <span><%= locals.data.class%> - <%= locals.data.dean%></span>
                                                     </div>
                                                 </div><!--user-profile end-->
                                                 <ul class="user-fw-status">
@@ -258,7 +258,95 @@
 										</div><!-- tab-feed end-->
 									</div><!--user-tab-sec end-->
 									<div class="product-feed-tab current" id="feed-dd">
-										<!-- Posts here -->
+										<%if (locals.record.length >0){ %>
+                                            <% record.forEach(function(row){ %>
+                                                <div id="posts-section" class="posts-section">
+                                                    <div class="posty" post_id="<%= row._id%>">
+                                                        <div class="post-bar no-margin">
+                                                            <div class="post_topbar">
+                                                                <div class="usy-dt">
+                                                                    <!-- Nhut added user profile picture for each post here -->
+                                                                    <img style="width: 50px; height: 50px;" src="<%=locals.data.imageurl%>" alt="">
+                                                                    <div class="usy-name">
+                                                                        <h3><%= locals.data.displayname%></h3>
+                                                                        <span><img src="images/clock.png" alt=""><%= row.createdAt%></span>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="ed-opts">
+                                                                    <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+                                                                    <ul class="ed-options">
+                                                                        <li><a class="post-edit active" id="editLink" href="#" value="<%= row._id%>" title="">Edit Post</a></li>
+                                                                        <li><a id="delLink" href="#" value="<%= row._id%>" title="">Delete Post</a></li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                            
+                                                            <div class="job_descp">
+                                                                <h3><%= row.title %></h3>
+                                                                <p>
+                                                                    <%= row.description %>
+                                                                    <!-- This is for View more function -->
+                                                                    <!-- <a href="#" title="">view more</a> -->
+                                                                </p>
+                                                                <img <% if(row.img == null){ %>style="display: none;"<% } %> src=<%= row.img %> alt="">
+                                                            
+                                                                <iframe <% if(row.url_video == null){ %>style="display: none;"<% } %> width="500" height="300" src="https://www.youtube.com/embed/<%= row.url_video %>  " frameborder="0">
+                                                                </iframe>
+                                                                
+                                                            </div>
+                                                            <div class="job-status-bar">
+                                                                <ul class="like-com"> 
+                                                                    <li><a href="#" title="" class="com"><img src="images/com.png" alt=""> Comment 15</a></li>
+                                                                </ul>
+                                                                
+                                                            </div>
+                                                        </div><!--post-bar end-->
+    
+                                                        <!-- Comment section -->
+                                                        <div class="comment-section">
+                                                            <div class="plus-ic">
+                                                                <i class="la la-plus"></i>
+                                                            </div>
+                                                            <div class="comment-sec">
+                                                                <ul>
+                                                                    <li>
+                                                                        <div class="comment-list">
+                                                                            <div class="bg-img">
+                                                                                <img src="http://via.placeholder.com/40x40" alt="">
+                                                                            </div>
+                                                                            <div class="comment">
+                                                                                <h3>John Doe</h3>
+                                                                                <span><img src="images/clock.png" alt=""> 3 min ago</span>
+                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus hendrerit metus, ut ullamcorper quam finibus at.</p>
+                                                                            </div>
+                                                                        </div><!--comment-list end-->
+                                                                        
+                                                                    </li>
+                                                                </ul>
+                                                            </div><!--comment-sec end-->
+                                                            <div class="post-comment">
+                                                                <div class="cm_img">
+                                                                    <img src="http://via.placeholder.com/40x40" alt="">
+                                                                </div>
+                                                                <div class="comment_box">
+                                                                    <form>
+                                                                        <input type="text" placeholder="Post a comment">
+                                                                        <button type="submit">Send</button>
+                                                                    </form>
+                                                                </div>
+                                                            </div><!--post-comment end-->
+                                                        </div><!--comment-section end-->
+                                                    </div><!--posty end-->
+                                                    <div class="process-comm">
+                                                        <!-- <div class="spinner">
+                                                            <div class="bounce1"></div>
+                                                            <div class="bounce2"></div>
+                                                            <div class="bounce3"></div>
+                                                        </div> -->
+                                                    </div>
+                                                </div><!--posts-section end-->
+                                            <% }) %>
+                                        <% } %>
 									</div><!--product-feed-tab end-->
 
 
@@ -346,5 +434,10 @@
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="lib/slick/slick.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="js/typeahead.min.js"></script>
+<!-- typeahead will break your entire DOM so re-definition is required -->
+<script type="text/javascript" src="js/searchBar.js">
+</script>
+
 </body>
 </html>

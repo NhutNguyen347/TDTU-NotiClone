@@ -645,13 +645,7 @@
 <script type="text/javascript" src="js/typeahead.min.js"></script>
 
 <!-- typeahead will break your entire DOM so re-definition is required -->
-<script type="text/javascript">
-    $('input.typeahead').typeahead({
-        name: 'email',
-        //remote: 'http://localhost:3000/search?key=%QUERY',
-        remote: 'https://tdtu-noticlone.herokuapp.com/search?key=%QUERY',
-        limit: 10
-    });
+<script type="text/javascript" src="js/searchBar.js">
 </script>
 
 </body>
