@@ -6,6 +6,7 @@ var admin = require('./routes/admin.js')
 var accountSetting = require('./routes/account_setting.js')
 var deanAccountSetting = require('./routes/dean_account_setting')
 var dean_index = require('./routes/dean_index')
+var user_profile = require('./routes/acount_profile')
 
 // DB Models import
 var User = require('./models/user')
@@ -88,6 +89,8 @@ app.all('/editPost', index)
 app.all('/submitEdit', index)
 // Student search bar
 app.all('/search', index)
+// For user profile
+app.all('/profile', user_profile)
 
 /////////////////////// 404 Handler //////////////////////////////////
 app.use('/:route', (req, res) =>{

@@ -164,7 +164,6 @@ router.post('/submitEdit', upload.single("postImage"), (req , res)=>{
 // For students search bar
 router.get('/search',function(req,res){
 
-    console.log(req.query.key)
     // get user infor from User 
     User.find({email: new RegExp(req.query.key, 'i')}, (err, user) => {
         if(err) console.log(err)
@@ -173,7 +172,6 @@ router.get('/search',function(req,res){
             for(i = 0; i < user.length; i++){
                 data.push(user[i].email)
             }
-            console.log(user)
             res.send(data)
         }
     })
