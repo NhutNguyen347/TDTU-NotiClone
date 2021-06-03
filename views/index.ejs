@@ -37,7 +37,7 @@
 					</div><!--logo end-->
 					<div class="search-bar">
 						<form>
-							<input type="text" name="search" placeholder="Search...">
+							<input class="typeahead" type="text" name="search" placeholder="Search...">
 							<button type="submit"><i class="la la-search"></i></button>
 						</form>
 					</div><!--search-bar end-->
@@ -641,6 +641,18 @@
 <script type="text/javascript" src="lib/slick/slick.min.js"></script>
 <script type="text/javascript" src="js/scrollbar.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
+<!-- Nhut added typehead lib and searchBar.js -->
+<script type="text/javascript" src="js/typeahead.min.js"></script>
+
+<!-- typeahead will break your entire DOM so re-definition is required -->
+<script type="text/javascript">
+    $('input.typeahead').typeahead({
+        name: 'email',
+        //remote: 'http://localhost:3000/search?key=%QUERY',
+        remote: 'https://tdtu-noticlone.herokuapp.com/search?key=%QUERY',
+        limit: 10
+    });
+</script>
 
 </body>
 </html>

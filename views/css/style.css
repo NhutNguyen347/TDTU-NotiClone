@@ -360,7 +360,7 @@ header {
 	position: relative;
 }
 .search-bar form input {
-	width: 100%;
+	width: 170%;
 	background-color: #fff;
 	height: 38px;
 	color: #b2b2b2;
@@ -5463,4 +5463,51 @@ a:hover {
     -webkit-transform: scale(1.0);
     transform: scale(1.0);
   }
+}
+
+/* ================== For typeahead re-definition ==================== */
+/* Nhut added typeahead style to make it look great */
+.typeahead, .tt-query, .tt-hint {
+	border: 2px solid #CCCCCC;
+	border-radius: 8px;
+	font-size: 24px;
+	line-height: 30px;
+	outline: medium none;
+}
+.typeahead {
+	background-color: #FFFFFF;
+    width: auto;
+}
+.typeahead:focus {
+	border: 2px solid #0097CF;
+}
+.tt-query {
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+}
+.tt-hint {
+	color: #999999;
+}
+.tt-dropdown-menu {
+	background-color: #FFFFFF;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+	margin-top: 12px;
+	padding: 8px 0;
+}
+.tt-suggestion {
+	font-size: 24px;
+	line-height: 24px;
+	padding: 3px 20px;
+}
+.tt-suggestion.tt-is-under-cursor {
+	background-color: #1da1f2;
+	color: #0097CF;
+}
+.tt-suggestion p {
+	margin: 0;
+}
+.tt-dropdown-menu {
+    max-height: 150px;
+    overflow-y: auto;
 }

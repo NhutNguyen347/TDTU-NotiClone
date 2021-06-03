@@ -86,6 +86,8 @@ app.all('/deletePost', index)
 app.all('/editPost', index)
 // Submit post edit result
 app.all('/submitEdit', index)
+// Student search bar
+app.all('/search', index)
 
 /////////////////////// 404 Handler //////////////////////////////////
 app.use('/:route', (req, res) =>{
