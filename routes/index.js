@@ -194,25 +194,32 @@ router.get('/search',function(req,res){
 });
 
 router.post('/comment', (req, res) => {
-    var postData = {
-        post_id: req.body.post_id,
-        content: req.body.comment 
-	};
+    // Get image and displayname from Profile
+    Profile.findOne({googleID: req.session.userId}).then(function(data){
+        console.log(data)
 
-    // Add new comment to comment collection
-    var new_comment = new Comment({
-        content: postData.content,
-        displayname: req.session.username
+        var postData = {
+            post_id: req.body.post_id,
+            content: req.body.comment
+        };
+    
+        // Add new comment to comment collection
+        var new_comment = new Comment({
+            content: postData.content,
+            displayname: data.displayname,
+            userImage: data.imageurl
+        })
+    
+        new_comment.save()
+    
+        // Add comment id to post collection 
+        Post.findOneAndUpdate({_id: postData.post_id}, {$push: {comments: new_comment._id}}, function(){
+    
+        })  
+    
+        console.log(postData)
     })
-
-    new_comment.save()
-
-    // Add comment id to post collection 
-    Post.findOneAndUpdate({_id: postData.post_id}, {$push: {comments: new_comment._id}}, function(){
-
-    })  
-
-    console.log(postData)
+    
 })
 
 
