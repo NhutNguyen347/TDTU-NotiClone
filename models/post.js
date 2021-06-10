@@ -6,7 +6,11 @@ postSchema = new Schema( {
     description: String,
     img:String,
     url_video:String,
-    
+    comments: [
+        {
+            type: String,
+        }
+    ]
 }, {collection: 'post', timestamps: true}),
 
 // model is very important, point to the right database(model) name to get access correctly

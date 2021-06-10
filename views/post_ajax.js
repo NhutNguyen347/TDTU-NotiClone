@@ -166,3 +166,24 @@ $('#editForm').ready(function(){
         });
     })
 })
+
+//================================= Comment posting ================================
+$('#cmtForm[post_id="'+post_id+'"]').ready(function(){
+    $(this).on('click', '#cmtButton', function(e){
+        
+        post_id = $(this).parent().find('#cmtButton').attr("post_id")
+    
+        var form = $('#cmtForm[post_id="'+post_id+'"]')[0];
+        var data = new FormData(form);
+    
+        data.append("post_id", post_id)
+
+        $.ajax({
+            type: "POST",
+            url: "/comment",
+            data: {post_id: data.get("post_id"), comment: data.get("comment")}
+        })
+
+        e.preventDefault()
+    })
+})  

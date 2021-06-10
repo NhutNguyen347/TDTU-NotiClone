@@ -46,7 +46,23 @@ router.get('/index', (req, res) => {
                     // Now sort by which post was lastly updated
                     Post.find({_id: postIds}).sort({updatedAt:-1}).then(function(posts){
                         record = posts
-                        res.render('index', {data: data, record: record})
+
+                        async function getComment(){
+
+                            for(let i = 0; i < record.length; i++){
+                                for(let j = 0; j < record[i].comments.length; j++){
+                                    let comment = await Comment.findOne({_id: record[i].comments[j]}).exec()
+        
+                                    record[i].comments[j] = comment
+        
+                                }
+                            }
+        
+                            res.render('index', {record: record, data: data, req})
+                        }
+        
+                        getComment()
+                        //res.render('index', {data: data, record: record})
                     })
                 })
             })
@@ -176,5 +192,28 @@ router.get('/search',function(req,res){
         }
     })
 });
+
+router.post('/comment', (req, res) => {
+    var postData = {
+        post_id: req.body.post_id,
+        content: req.body.comment 
+	};
+
+    // Add new comment to comment collection
+    var new_comment = new Comment({
+        content: postData.content,
+        displayname: req.session.username
+    })
+
+    new_comment.save()
+
+    // Add comment id to post collection 
+    Post.findOneAndUpdate({_id: postData.post_id}, {$push: {comments: new_comment._id}}, function(){
+
+    })  
+
+    console.log(postData)
+})
+
 
 module.exports = router

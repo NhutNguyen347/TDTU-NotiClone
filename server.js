@@ -12,6 +12,7 @@ var user_profile = require('./routes/acount_profile')
 var User = require('./models/user')
 var Profile = require('./models/profile')
 var Post = require('./models/post')
+var Comment = require('./models/comment')
 
 // Oauth key
 var key = require('./config/key')
@@ -91,6 +92,8 @@ app.all('/submitEdit', index)
 app.all('/search', index)
 // For user profile
 app.all('/profile', user_profile)
+// For comment posting and processing
+app.all('/comment', index)
 
 /////////////////////// 404 Handler //////////////////////////////////
 app.use('/:route', (req, res) =>{
