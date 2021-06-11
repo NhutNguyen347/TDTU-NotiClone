@@ -31,7 +31,23 @@ router.get('/profile', (req, res) => {
                     // Now sort by which post was lastly updated
                     Post.find({_id: postIds}).sort({updatedAt:-1}).then(function(posts){
                         record = posts
-                        res.render('user-profile', {data: profile, record: record})
+                        async function getComment(){
+
+                            for(let i = 0; i < record.length; i++){
+                                for(let j = 0; j < record[i].comments.length; j++){
+                                    let comment = await Comment.findOne({_id: record[i].comments[j]}).exec()
+        
+                                    record[i].comments[j] = comment
+        
+                                }
+                            }
+                            
+                            res.render('user-profile', {data: profile, record: record, req})
+                            //res.render('index', {record: record, data: data, req})
+                        }
+        
+                        getComment()
+                        
                     })
                     
                 })

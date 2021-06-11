@@ -2,20 +2,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>TDTU-Center</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="" />
-<meta name="keywords" content="" />
-<link rel="stylesheet" type="text/css" href="css/animate.css">
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-<link rel="stylesheet" type="text/css" href="css/line-awesome.css">
-<link rel="stylesheet" type="text/css" href="css/line-awesome-font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
-<link rel="stylesheet" type="text/css" href="lib/slick/slick.css">
-<link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css">
-<link rel="stylesheet" type="text/css" href="css/style.css">
-<link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <meta charset="UTF-8">
+    <title>TDTU-Center</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+    <link rel="stylesheet" type="text/css" href="css/animate.css">
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/line-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/line-awesome-font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <!-- Nhut added jquery and js -->
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="post_ajax.js"></script>
 </head>
 
 
@@ -157,7 +160,7 @@
 								<li><a href="#" title="">Faqs</a></li>
 								<li><a href="#" title="">Terms & Conditions</a></li>
 							</ul>
-							<h3 class="tc"><a href="sign-in.html" title="">Logout</a></h3>
+							<h3 class="tc"><a href="/logout" title="">Logout</a></h3>
 						</div><!--user-account-settingss end-->
 					</div>
 				</div><!--header-data end-->
@@ -301,28 +304,32 @@
                                                             <div class="comment-sec">
                                                                 <ul>
                                                                     <li>
-                                                                        <div class="comment-list">
-                                                                            <div class="bg-img">
-                                                                                <img src="http://via.placeholder.com/40x40" alt="">
-                                                                            </div>
-                                                                            <div class="comment">
-                                                                                <h3>John Doe</h3>
-                                                                                <span><img src="images/clock.png" alt=""> 3 min ago</span>
-                                                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam luctus hendrerit metus, ut ullamcorper quam finibus at.</p>
-                                                                            </div>
-                                                                        </div><!--comment-list end-->
+                                                                        <% row.comments.forEach(function(comment){ %>
+                                                                            <% if(comment != null){ %>
+                                                                                <div class="comment-list">
+                                                                                    <div class="bg-img">
+                                                                                        <img style="width: 40px; height: 40px;" src="<%= comment.userImage%>" alt="">
+                                                                                    </div>
+                                                                                    <div class="comment">
+                                                                                        <h3><%= comment.displayname%></h3>
+                                                                                        <p><%= comment.content%></p>
+                                                                                    </div>
+                                                                                </div><!--comment-list end-->
+                                                                            <% } %>
+                                                                        <% }) %>
                                                                         
                                                                     </li>
                                                                 </ul>
                                                             </div><!--comment-sec end-->
                                                             <div class="post-comment">
                                                                 <div class="cm_img">
-                                                                    <img src="http://via.placeholder.com/40x40" alt="">
+                                                                    <img style="width: 40px; height: 40px;" src="<%= locals.data.imageurl %>" alt="">
                                                                 </div>
+                                                                <!-- Nhut fix this to make comment posting function -->
                                                                 <div class="comment_box">
-                                                                    <form>
-                                                                        <input type="text" placeholder="Post a comment">
-                                                                        <button type="submit">Send</button>
+                                                                    <form id="cmtForm" method="POST" post_id="<%= row._id%>">
+                                                                        <input type="text" placeholder="Post your comment" name="comment" required>
+                                                                        <button class="submit" id="cmtButton" type="submit" post_id="<%= row._id%>">Send</button>
                                                                     </form>
                                                                 </div>
                                                             </div><!--post-comment end-->

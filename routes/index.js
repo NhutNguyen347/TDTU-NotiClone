@@ -196,7 +196,6 @@ router.get('/search',function(req,res){
 router.post('/comment', (req, res) => {
     // Get image and displayname from Profile
     Profile.findOne({googleID: req.session.userId}).then(function(data){
-        console.log(data)
 
         var postData = {
             post_id: req.body.post_id,
@@ -217,7 +216,7 @@ router.post('/comment', (req, res) => {
     
         })  
     
-        console.log(postData)
+        // console.log(postData)
     })
     
 })
