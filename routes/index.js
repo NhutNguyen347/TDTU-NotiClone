@@ -215,6 +215,8 @@ router.post('/comment', (req, res) => {
         Post.findOneAndUpdate({_id: postData.post_id}, {$push: {comments: new_comment._id}}, function(){
     
         })  
+
+        res.send(new_comment)
     
         // console.log(postData)
     })

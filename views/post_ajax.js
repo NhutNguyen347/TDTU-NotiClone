@@ -181,7 +181,30 @@ $('#cmtForm[post_id="'+post_id+'"]').ready(function(){
         $.ajax({
             type: "POST",
             url: "/comment",
-            data: {post_id: data.get("post_id"), comment: data.get("comment")}
+            data: {post_id: data.get("post_id"), comment: data.get("comment")},
+            success: (data) => {
+                
+                html = `
+                    <div class="comment-list" comment_id="${data._id}">
+                        <div class="bg-img">
+                            <img style="width: 40px; height: 40px;" src="${data.userImage}" alt="">
+                        </div>
+                        <div class="comment">
+                            <h3>${data.displayname}</h3>
+                            <p>${data.content}</p>
+                        </div>
+                        <div class="ed-opts">
+                            <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+                            <ul class="ed-options" style="width: 130px;">
+                                <li><a id="delComment" href="#" value="${data._id}" title="">Delete</a></li>
+                            </ul>
+                        </div>
+                    </div><!--comment-list end-->
+                `
+                $('.posty[post_id='+post_id+'] .comment-sec ul li').append(
+                    $('<div></div>').html(html)
+                )
+            }
         })
 
         e.preventDefault()
