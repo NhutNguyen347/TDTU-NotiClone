@@ -58,4 +58,24 @@ router.get('/profile', (req, res) => {
     }
 })
 
+router.post('/deleteComment', (req, res) => {
+    var comment_id = req.body.comment_id
+
+    // Find comment with defined comment_id to seek for displayname
+    Comment.findOne({_id: comment_id}).then((comment) => {
+        // Search displayname in Profile
+        Profile.findOne({displayname: comment.displayname}).then((profile) => {
+            if(profile.googleID == req.session.userId){
+                Comment.deleteOne({_id: comment_id}, (err, data) => {
+                    if(err) console.log(err)
+                    else{
+                        res.send(data)
+                    }
+                })
+            }
+        
+        })
+    })
+})
+
 module.exports = router

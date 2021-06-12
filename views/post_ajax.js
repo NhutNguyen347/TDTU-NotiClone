@@ -187,3 +187,26 @@ $('#cmtForm[post_id="'+post_id+'"]').ready(function(){
         e.preventDefault()
     })
 })  
+
+
+//================================= Comment delete ================================
+$(document).on("click", "#delComment", function(){
+    comment_id = $(this).parent().find('#delComment').attr("value")
+
+    $.ajax({
+        type: "POST",
+        url: "/deleteComment",
+        data: {comment_id: comment_id},
+        success: (data) => {      
+            if(data){
+                // Remove the whole div contains new post 
+                $('div[comment_id="'+comment_id+'"]').remove()
+            }else{
+                console.log('data cannot be deleted');
+            }
+        },
+        error: (e) => {
+            console.log('Error')
+        }
+    });
+})

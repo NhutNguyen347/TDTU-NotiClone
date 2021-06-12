@@ -94,6 +94,8 @@ app.all('/search', index)
 app.all('/profile', user_profile)
 // For comment posting and processing
 app.all('/comment', index)
+// Delete Comment
+app.all('/deleteComment', user_profile)
 
 /////////////////////// 404 Handler //////////////////////////////////
 app.use('/:route', (req, res) =>{

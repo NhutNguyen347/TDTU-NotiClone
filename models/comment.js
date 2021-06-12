@@ -4,7 +4,7 @@ var Schema = mongoose.Schema
 comentSchema = new Schema( {
     content:String,
     displayname: String,
-    userImage: String
+    userImage: String,
 }, {collection: 'comment', timestamps: true}),
 
 // model is very important, point to the right database(model) name to get access correctly
