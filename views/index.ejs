@@ -360,13 +360,19 @@
                                                                 <li>
                                                                     <% row.comments.forEach(function(comment){ %>
                                                                         <% if(comment != null){ %>
-                                                                            <div class="comment-list">
+                                                                            <div class="comment-list" comment_id="<%= comment._id%>">
                                                                                 <div class="bg-img">
                                                                                     <img style="width: 40px; height: 40px;" src="<%= comment.userImage%>" alt="">
                                                                                 </div>
                                                                                 <div class="comment">
                                                                                     <h3><%= comment.displayname%></h3>
                                                                                     <p><%= comment.content%></p>
+                                                                                </div>
+                                                                                <div class="ed-opts">
+                                                                                    <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+                                                                                    <ul class="ed-options" style="width: 130px;">
+                                                                                        <li><a id="delComment" href="#" value="<%= comment._id%>" title="">Delete</a></li>
+                                                                                    </ul>
                                                                                 </div>
                                                                             </div><!--comment-list end-->
                                                                         <% } %>

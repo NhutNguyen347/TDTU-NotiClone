@@ -190,7 +190,9 @@ $('#cmtForm[post_id="'+post_id+'"]').ready(function(){
 
 
 //================================= Comment delete ================================
-$(document).on("click", "#delComment", function(){
+$(document).on("click", "#delComment", function(e){
+    e.preventDefault()
+    
     comment_id = $(this).parent().find('#delComment').attr("value")
 
     $.ajax({
