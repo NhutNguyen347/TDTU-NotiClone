@@ -17,6 +17,11 @@
 <link rel="stylesheet" type="text/css" href="lib/slick/slick-theme.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <link rel="stylesheet" type="text/css" href="css/responsive.css">
+
+<!-- Nhut added jquery and js -->
+<script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+<script src="post_ajax.js"></script>
+</head>
 </head>
 
 
@@ -290,7 +295,7 @@
 										</div>
 										<div class="post-st">
 											<ul>
-												<li><a class="post-jb active" href="#" title="">Post something? 🤔</a></li>
+												<li><a class="post-jb active" href="#" title="">Inform something? 💁</a></li>
 											</ul>
 										</div><!--post-st end-->
 									</div><!--post-topbar end-->
@@ -585,18 +590,30 @@
 			<div class="post-project">
 				<h3>Write your post 😇</h3>
 				<div class="post-project-fields">
-					<form>
+					<form id="postForm" method="POST" enctype="multipart/form-data">
 						<div class="row">
 							<div class="col-lg-12">
-								<input type="text" name="title" placeholder="Title">
+								<input id="titleInput" type="text" name="title" placeholder="Title" required>
 							</div>
 							
 							<div class="col-lg-12">
-								<textarea name="description" placeholder="Description"></textarea>
+								<textarea id="descInput" name="description" placeholder="Description" required></textarea>
 							</div>
+
+                            <!-- For image upload -->
+                            <div class="col-lg-12">
+							    <input type="file" id="img" name="postImage" accept="image/*">
+							</div>
+
+                            <div class="col-lg-12">
+                                <input id="urlInput" type="url" name="url_video" id="url"
+                                placeholder="https://www.youtube.com/"
+                                pattern="https://www.youtube.com/.*" size="30">
+                            </div>
+                            
 							<div class="col-lg-12">
 								<ul>
-									<li><button class="active" type="submit" value="post">Post</button></li>
+									<li><button id="postButton" class="submit" type="submit" value="post">Post</button></li>
 								</ul>
 							</div>
 						</div>

@@ -7,6 +7,7 @@ var accountSetting = require('./routes/account_setting.js')
 var deanAccountSetting = require('./routes/dean_account_setting')
 var dean_index = require('./routes/dean_index')
 var user_profile = require('./routes/acount_profile')
+var report = require('./views/report/report')
 
 // DB Models import
 var User = require('./models/user')
@@ -22,6 +23,9 @@ var express = require('express')
 var mongoose = require('mongoose')
 var session = require('express-session')
 var passport = require('passport');
+const nodemailer = require('nodemailer');
+const hbs = require('nodemailer-handlebars');
+var bodyParser = require('body-parser')
 
 // ####################### Server Setup ################################
 var app = express()
@@ -44,8 +48,10 @@ cloudinary.config({
 
 ///////////////////////// App Setup///////////////////////////////////
 app.set('view engine', 'ejs')
+app.use(bodyParser.urlencoded({extended: true}))
 app.use(express.static("views"))
 app.use(express.static("views/admin"))
+app.use(express.static("views/report"))
 
 ///////////////////////// Connect to MongoDB ////////////////////////////
 var db_connection = require('./config/db')
@@ -96,6 +102,10 @@ app.all('/profile', user_profile)
 app.all('/comment', index)
 // Delete Comment
 app.all('/deleteComment', user_profile)
+// Report error
+app.all('/sendMessage', report)
+
+app.all('/submitMessage', report)
 
 /////////////////////// 404 Handler //////////////////////////////////
 app.use('/:route', (req, res) =>{
