@@ -112,8 +112,7 @@ Feel free to dive in! [Open an issue](https://github.com/NhutNguyen347/TDTU-Noti
 ### Contributors
 
 This project exists thanks to all the people who contribute. 
-<a href="https://github.com/RichardLitt/standard-readme/graphs/contributors"><img src="https://opencollective.com/tdtu-notification-center-clone/collective/tiers/backers.svg?width=890&button=false" /></a>
-
+<a href="https://github.com/NhutNguyen347/TDTU-NotiClone/graphs/contributors"><img src="https://opencollective.com/tdtu-notification-center-clone/contributors.svg?width=890&button=false"/></a>
 
 ## License
 
