@@ -37,11 +37,17 @@ function doAjax() {
                     //////////////////////////////////////////////////////////////////////////////////////
                     
                     $(this).find('#username').text(data.username)
+                    $(this).find('#main-profile-pic').attr("src", data.img)
                     $(this).find('#title').text(data.title)
                     $(this).find('#description ').text(data.description)
+                    $(this).find('#commentsec-pic').attr('src', data.img)
     
                     // Bind post_id to div posty of each new post - AJAX add only
                     $(this).find('#posty_ajax').attr("post_id", data.postID)
+                    // Bind post_id to Comment button
+                    $(this).find('#cmtButton').attr("post_id", data.postID)
+                    // Bind post_id to Comment form 
+                    $(this).find('#cmtForm').attr("post_id", data.postID)
     
                     if(data.img !== undefined){
                         $(this).find('#img').html('<img alt="" src="'+data.img.path+'">')
@@ -175,7 +181,8 @@ $('#cmtForm[post_id="'+post_id+'"]').ready(function(){
     
         var form = $('#cmtForm[post_id="'+post_id+'"]')[0];
         var data = new FormData(form);
-    
+        
+        console.log(form)
         data.append("post_id", post_id)
 
         $.ajax({
@@ -183,7 +190,6 @@ $('#cmtForm[post_id="'+post_id+'"]').ready(function(){
             url: "/comment",
             data: {post_id: data.get("post_id"), comment: data.get("comment")},
             success: (data) => {
-                
                 html = `
                     <div class="comment-list" comment_id="${data._id}">
                         <div class="bg-img">
@@ -210,7 +216,6 @@ $('#cmtForm[post_id="'+post_id+'"]').ready(function(){
         e.preventDefault()
     })
 })  
-
 
 //================================= Comment delete ================================
 $(document).on("click", "#delComment", function(e){

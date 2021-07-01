@@ -106,11 +106,16 @@ router.post('/index', upload.single("postImage"), (req , res)=>{
     // Input the created post IDs to User posts collection
     User.findOneAndUpdate({googleID: req.session.userId}, {$push: {posts: new_post._id}}, function(err, result){
     })
+    // Before sending back the data, bind in user_id, username
+    Profile.findOne({googleID: req.session.userId}).then(function(profile){
+        postData.username = profile.displayname
+        postData.img = profile.imageurl
 
-    // Send data back to AJAX to add it without page reload
-    postData.username = req.session.username
-    postData.postID = new_post._id
-    res.send(postData)
+       // Send data back to AJAX to add it without page reload
+        postData.postID = new_post._id
+        res.send(postData)
+
+    })
 })
 
 router.post('/deletePost', (req, res) => {
@@ -201,6 +206,7 @@ router.post('/comment', (req, res) => {
             post_id: req.body.post_id,
             content: req.body.comment
         };
+        console.log(postData)
     
         // Add new comment to comment collection
         var new_comment = new Comment({
