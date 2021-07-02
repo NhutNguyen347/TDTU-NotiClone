@@ -22,7 +22,7 @@ This repository contains:
 
 - [Introduce](#introduce)
 - 	- [Purpose](#purpose)
-- 	- [Function 1](#funtion)
+- 	- [Function 1](#funtion 1)
 - 	- [Function 2](#funtion)
 - 	- [Function 3](#funtion)		
 - 	- [Interface ](#interface)
