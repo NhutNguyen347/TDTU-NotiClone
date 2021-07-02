@@ -113,14 +113,12 @@ Feel free to dive in! [Open an issue](https://github.com/NhutNguyen347/TDTU-Noti
 
 This project exists thanks to all the people who contribute. 
 
-<a href="https://github.com/BrandonTuan777"  > 
-   <img src="https://github.com/BrandonTuan777.png" style="width:50px;border-radius:50%;" alt="" /> 
-</a>
-
-<a href="https://github.com/NhutNguyen236"  > 
-   <img src="https://github.com/NhutNguyen236.png" style="width:50px;border-radius:50%;" alt="" /> 
-</a>
-
+<table>
+  	<tr>
+	    	<td align="center"><a href="https://github.com/BrandonTuan777"><img src="https://github.com/BrandonTuan777.png" width="100px;" alt=""/><br /><sub><b>Morisaki Tuan</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=kentcdodds" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Akentcdodds" title="Reviewed Pull Requests">👀</a> <a href="#talk-kentcdodds" title="Talks">📢</a></td>
+		<td align="center"><a href="https://github.com/NhutNguyen236"><img src="https://github.com/NhutNguyen236.png" width="100px;" alt=""/><br /><sub><b>Nhut Nguyen</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=kentcdodds" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Akentcdodds" title="Reviewed Pull Requests">👀</a> <a href="#talk-kentcdodds" title="Talks">📢</a></td>
+	</tr>
+</table>
 
 ## License
 
