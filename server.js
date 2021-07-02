@@ -26,6 +26,9 @@ var passport = require('passport');
 const nodemailer = require('nodemailer');
 const hbs = require('nodemailer-handlebars');
 var bodyParser = require('body-parser')
+var dotenv = require('dotenv')
+var path = require('path')
+
 
 // ####################### Server Setup ################################
 var app = express()

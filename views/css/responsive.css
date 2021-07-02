@@ -40,6 +40,17 @@
 	.notification-box {left: 100%;top: 0;}
 	nav ul ul {left: 50%;top: 0;border: 1px solid #e4e4e4;padding-left: 20px;padding-right: 20px;}
 	.sgt-text span {font-size: 12px;}
+    
+    /* Nhut added responsive fix for post img and video */
+    .job_descp img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .job_descp iframe {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 
@@ -83,6 +94,17 @@
 	.profile-account-setting {margin-bottom: 50px;}
 	.profile-bx-info {margin-bottom: 25px;}
 	.profile-bx-details {margin-bottom: -25px;}
+    
+    /* Nhut added responsive fix for post img and video */
+    .job_descp img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .job_descp iframe {
+        width: 458px;
+        height: auto;
+    }
 }
 
 
@@ -109,6 +131,17 @@
 	.mf-field input {width: 100%;margin-bottom: 20px;}
 	.mf-field button {margin-left: 0;margin-bottom: 10px;}
 	.message-inner-dt > img {margin-bottom: 10px;}
+
+    /* Nhut added responsive fix for post img and video */
+    .job_descp img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .job_descp iframe {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 
@@ -170,6 +203,17 @@
 	.login-resources {text-align: left;}
 	.forum-bar ul li:last-child {margin-bottom: 0;}
 	.conversation-box {left: -20px;width: 280px;}
+
+    /* Nhut added responsive fix for post img and video */
+    .job_descp img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .job_descp iframe {
+        max-width: 100%;
+        height: auto;
+    }
 }
 
 @media (max-width: 410px) {
@@ -185,4 +229,15 @@
 	.request-info {width: 100%;padding: 0;margin: 15px 0;}
 	.accept-feat {width: 100%;}
 	.requests-list {padding-bottom: 50px;}
+
+    /* Nhut added responsive fix for post img and video */
+    .job_descp img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .job_descp iframe {
+        max-width: 100%;
+        height: auto;
+    }
 }

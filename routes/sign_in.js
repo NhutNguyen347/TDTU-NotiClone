@@ -3,6 +3,10 @@ const router = express.Router()
 const bodyParser = require('body-parser')
 const passport = require('passport')	
 var key = require('../config/key')
+var dotenv = require('dotenv')
+var path = require('path')
+
+dotenv.config({ path: path.resolve(__dirname, '../config/.env')});
 
 router.use(express.static("views"))
 router.use(bodyParser.urlencoded({extended: true}))
@@ -113,8 +117,8 @@ passport.deserializeUser(function(obj, cb) {
 passport.use(new GoogleStrategy({
     clientID: key.google.clientID,
     clientSecret: key.google.clientSecret,
-    callbackURL: "https://tdtu-noticlone.herokuapp.com/auth/google/callback"
-    //callbackURL: "http://localhost:3000/auth/google/callback"
+    //callbackURL: "https://tdtu-noticlone.herokuapp.com/auth/google/callback"
+    callbackURL: process.env.GOOGLE_PATH
   },
   function(accessToken, refreshToken, profile, done) {
       userProfile=profile;

@@ -3,6 +3,10 @@ var  express = require("express")
 const router = express.Router()
 const nodemailer = require('nodemailer');
 const hbs = require('nodemailer-handlebars');
+var dotenv = require('dotenv')
+var path = require('path')
+
+dotenv.config({ path: path.resolve(__dirname, '../config/.env')});
 
 const log = console.log;
 
@@ -25,8 +29,8 @@ router.post('/submitMessage', (req, res) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'phamp9331@gmail.com',
-            pass: '@Phongenter212123'
+            user: process.env.EMAIL,
+            pass: process.env.EMAIL_PASSWORD
         }
     });
 
@@ -40,7 +44,7 @@ router.post('/submitMessage', (req, res) => {
     }));
 
     let mailOptionsClient = {
-        from: 'phamp9331@gmail.com',
+        from: process.env.EMAIL,
         to: formData.email,
         subject: '💓 Thank you for your request 💓',
         template: 'index',
