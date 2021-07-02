@@ -79,4 +79,17 @@ router.post('/addDean' , (req , res)=>{
     res.redirect('/addDean')
 })
 
+router.post('/delDean', (req, res) => {
+    var deanID = req.body.deanID
+
+    // Remove dean with id from User collection 
+    User.findOneAndDelete({_id: deanID}).then(function(){
+        Profile.findOneAndDelete({deanID: deanID}).then(function(){
+            res.send("Fine")
+        })
+    })
+
+    
+})
+
 module.exports = router

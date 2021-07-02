@@ -33,7 +33,6 @@
     table tr td:first-child::before {
         counter-increment: rowNumber;
         content: counter(rowNumber);
-        
     }
 </style>
 
@@ -103,7 +102,7 @@
                         <!-- ============================================================== -->
                         <li>
                             <a class="profile-pic" href="#">
-                                <img src="plugins/images/users/varun.jpg" alt="user-img" width="36"
+                                <img src="https://github.com/NhutNguyen236.png" alt="user-img" width="36"
                                     class="img-circle"><span class="text-white font-medium">Admin</span></a>
                         </li>
                         <!-- ============================================================== -->
@@ -234,6 +233,7 @@
                                             <th class="border-top-0">Username</th>
                                             <th class="border-top-0">Password</th>
                                             <th class="border-top-0">Role</th>
+                                            <th class="border-top-0">Remove Dean</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -245,6 +245,7 @@
                                                 <td><%= data.username%></td>
                                                 <td><%= data.password%></td>
                                                 <td>Dean/ Department</td>
+                                                <td><button deanID="<%= data._id%>" id="delDean" type="submit" class="btn btn-outline-success">Remove</button></td>
                                             </tr>
                                         <% }) %>
                                         
@@ -320,6 +321,7 @@
     <script src="js/sidebarmenu.js"></script>
     <!--Custom JavaScript -->
     <script src="js/custom.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
