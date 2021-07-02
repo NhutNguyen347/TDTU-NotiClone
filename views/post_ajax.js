@@ -20,7 +20,6 @@ function doAjax() {
         contentType: false,
         cache: false,
         success: (data) => {      
-            console.log(data)
             // The data got a vague reality that sometimes we dont have video_url or img or both
             $('#newPost').prepend(
                 $('<div></div>').load('/load_ajax/post.ejs', function(){
@@ -49,8 +48,8 @@ function doAjax() {
                     // Bind post_id to Comment form 
                     $(this).find('#cmtForm').attr("post_id", data.postID)
     
-                    if(data.img !== undefined){
-                        $(this).find('#img').html('<img alt="" src="'+data.img.path+'">')
+                    if(data.post_img !== undefined){
+                        $(this).find('#img').html('<img alt="" src="'+data.post_img.path+'">')
                     }
                     if(data.url_video !== undefined){
                         $(this).find('#url_video').html('<iframe title="yb_video" width="500" height="300" src="https://www.youtube.com/embed/'+data.url_video+'" frameborder="0">')

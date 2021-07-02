@@ -115,11 +115,16 @@ This project exists thanks to all the people who contribute.
 
 <table>
   	<tr>
-	    	<td align="center"><a href="https://github.com/BrandonTuan777"><img src="https://github.com/BrandonTuan777.png" width="100px;" alt=""/><br /><sub><b>Morisaki Tuan</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=kentcdodds" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Akentcdodds" title="Reviewed Pull Requests">👀</a> <a href="#talk-kentcdodds" title="Talks">📢</a></td>
-		<td align="center"><a href="https://github.com/NhutNguyen236"><img src="https://github.com/NhutNguyen236.png" width="100px;" alt=""/><br /><sub><b>Nhut Nguyen</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=kentcdodds" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Akentcdodds" title="Reviewed Pull Requests">👀</a> <a href="#talk-kentcdodds" title="Talks">📢</a></td>
+        <td align="center">
+            <a href="https://github.com/BrandonTuan777"><img src="https://github.com/BrandonTuan777.png" width="100px;" alt=""/><br/>
+            <sub><b>Morisaki Tuan</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=kentcdodds" title="Documentation">📖</a> <a href="#talk-kentcdodds" title="Talks">📢</a>
+        </td>
+            <td align="center"><a href="https://github.com/NhutNguyen236"><img src="https://github.com/NhutNguyen236.png" width="100px;" alt=""/><br/>
+            <sub><b>Nhut Nguyen</b></sub></a><br /><a href="#question-kentcdodds" title="Answering Questions">💬</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=kentcdodds" title="Documentation">📖</a> <a href="https://github.com/all-contributors/all-contributors/pulls?q=is%3Apr+reviewed-by%3Akentcdodds" title="Reviewed Pull Requests">👀</a> <a href="https://github.com/all-contributors/all-contributors/commits?author=MatheusRV" title="Code">💻</a> <a href="#maintenance-tbenning" title="Maintenance">🚧</a> 
+        </td>
 	</tr>
 </table>
 
 ## License
 
-[MIT](LICENSE) © Richard Littauer
+[MIT](LICENSE) © Nhut & Brandon

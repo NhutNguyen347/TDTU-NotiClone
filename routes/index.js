@@ -87,15 +87,17 @@ router.post('/index', upload.single("postImage"), (req , res)=>{
 		title: req.body.title,
 		description: req.body.description,
         url_video: idGetter.ybgetID(req.body.url_video),
-		img: req.file
+		post_img: req.file
 	};
+
+    console.log(postData)
 
     var new_post = undefined
     // Handler for undefined field
     Object.keys(postData).forEach(key => postData[key] === undefined ? delete postData[key] : {});
     // Obj filter
-    if(postData.img !== undefined){
-        new_post = new Post({title: postData.title, description: postData.description, img: postData.img.path})
+    if(postData.post_img !== undefined){
+        new_post = new Post({title: postData.title, description: postData.description, post_img: postData.post_img.path})
     }
     else{
         new_post = new Post(postData)
