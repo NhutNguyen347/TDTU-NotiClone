@@ -20,10 +20,14 @@ This repository contains:
 
 ## 🍱 Table of Contents 🍱
 
-- [Background](#background)
-- [How to install?](#install)
+- [Introduce](#introduce)
+- 	- [Purpose](#purpose)
+- 	- [Function 1](#funtion)
+- 	- [Function 2](#funtion)
+- 	- [Function 3](#funtion)		
+- 	- [Interface ](#interface)
 - [Usage](#usage)
-	- [Generator](#generator)
+
 - [Badge](#badge)
 - [Example Readmes](#example-readmes)
 - [Related Efforts](#related-efforts)
@@ -31,52 +35,66 @@ This repository contains:
 - [Contributing](#contributing)
 - [License](#license)
 
-## Background
+## Introduce
 
-Standard Readme started with the issue originally posed by [@maxogden](https://github.com/maxogden) over at [feross/standard](https://github.com/feross/standard) in [this issue](https://github.com/feross/standard/issues/141), about whether or not a tool to standardize readmes would be useful. A lot of that discussion ended up in [zcei's standard-readme](https://github.com/zcei/standard-readme/issues/1) repository. While working on maintaining the [IPFS](https://github.com/ipfs) repositories, I needed a way to standardize Readmes across that organization. This specification started as a result of that.
+### Purpose
 
-> Your documentation is complete when someone can use your module without ever
-having to look at its code. This is very important. This makes it possible for
-you to separate your module's documented interface from its internal
-implementation (guts). This is good because it means that you are free to
-change the module's internals as long as the interface remains the same.
+This is the final project of the advanced web course of Ton Duc Thang University. In the increasingly complicated situation of COVID, the Faculty of Information Technology (IT) wants to enhance the interaction between students on the Internet. online platform. Therefore, the Faculty of Information Technology wants to improve the existing Notification system in the Student Portal, adding features to help students exchange, interact online and receive feedback. Better school support.
+This system can be considered as a miniature social network where the school can post announcements, and students can post to exchange and share.
 
-> Remember: the documentation, not the code, defines what a module does.
+The website has 3 roles as follows: 
 
-~ [Ken Williams, Perl Hackers](http://mathforum.org/ken/perl_modules.html#document)
+• Admin, has full decision rights in the system. 
 
-Writing READMEs is way too hard, and keeping them maintained is difficult. By offloading this process - making writing easier, making editing easier, making it clear whether or not an edit is up to spec or not - you can spend less time worrying about whether or not your initial documentation is good, and spend more time writing and using code.
+• Department/Faculty, has the right to manage content in the category under his/her charge. 
 
-By having a standard, users can spend less time searching for the information they want. They can also build tools to gather search terms from descriptions, to automatically run example code, to check licensing, and so on.
+• Student.
 
-The goals for this repository are:
+### Function 1: Log in :see_no_evil: :hear_no_evil: :sun_with_face:
 
-1. A well defined **specification**. This can be found in the [Spec document](spec.md). It is a constant work in progress; please open issues to discuss changes.
-2. **An example README**. This Readme is fully standard-readme compliant, and there are more examples in the `example-readmes` folder.
-3. A **linter** that can be used to look at errors in a given Readme. Please refer to the [tracking issue](https://github.com/RichardLitt/standard-readme/issues/5).
-4. A **generator** that can be used to quickly scaffold out new READMEs. See [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme).
-5. A **compliant badge** for users. See [the badge](#badge).
+Admin logs into the system with username and password (initialized by database).
 
-## 🔠 Install
+Department/Faculty log in to the system with username and password. This username and password are created by the Admin.
 
-This project uses [node](http://nodejs.org) and [npm](https://npmjs.com). Go check them out if you don't have them locally installed. Then you need to go to the root folder and install all the required modules in the project by using the bash below
+Students who want to access the system must log in. Students do not create an account by themselves, but log in using the "Sign in with" function
+Google” (https://developers.google.com/identity/sign-in/web/sign-in). So the password authentication will be done by Google.
+Only accounts whose email is @student.tdtu.edu.vn are allowed to log in to the system. When the student successfully logged in
+For the first time, the system will create an account for the student in the database based on the information obtained from the Google account.
 
-```sh
-$ npm install
-```
+![alt text](https://scontent.fhan5-6.fna.fbcdn.net/v/t1.15752-9/208848895_779701409365726_70249581264446729_n.png?_nc_cat=102&ccb=1-3&_nc_sid=ae9488&_nc_ohc=sxkArH6gNyoAX-NWVPP&_nc_ht=scontent.fhan5-6.fna&oh=8557c8de632655d901912e1b16e53f38&oe=60E45131)
+
+### Function 2: Create an account and update account information :crystal_ball: :key: 🔓 
+
+Admin has the right to create an account for the Department/Faculty. When creating an account, the Admin can grant permission to the Department/Department to post for one or
+many categories.
+
+The Department/Faculty only has the right to post for the category(s) it is in charge of. Department/Faculty can change the default password by Admin level at first.
+
+Students after successful login can update the following personal information: Display name, Class, Faculty and avatar image (profile)
+picture).
+
+
+### Function 3: Content Management :straight_ruler:  :pencil2: :books:
+
+Students have the right to post  (like facebook, post on their own wall). When students post articles, they can include images or videos (only videos from youtube ). All student posts are public and can be seen by others:
+![alt text](https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/211609747_351952109675876_73019969499302235_n.png?_nc_cat=105&ccb=1-3&_nc_sid=ae9488&_nc_ohc=iycdO4xz2YYAX_IQwx4&tn=0JcI-QG68uJ_S0jT&_nc_ht=scontent-hkg4-1.xx&oh=3bfd58eb4b45e4f1524bd3a7dd443aa5&oe=60E48C4B)
+
+
+Students can edit and delete content that they have posted. When a post is deleted, the comments related to that post are also deleted.
+The function of creating, deleting, and editing posts must be done by AJAX (no page reload).Users (Admin, Department/Faculty, Students) can comment on any post. Comment function must be done by AJAX(no page reload).Users can view all comments. Users can delete their own comments.The Department/Faculty has the right to post articles in the category it is in charge of. If assigned to be in charge of more than one category, when Post an article, you can choose the category you want to post in.
+
+### Interface display :muscle: :dvd: :hearts:
+
+• The website is user-friendly, has a logical layout, has menus and navigation.
+
+• All pages are capable responsive and works stably on any type of device.
 
 ## Usage
 
-<!-- This is only a documentation package. You can print out [spec.md](spec.md) to your console: -->
-I did customize that `npm start` so ahead and do this in root folder and the application will run straight the way at port 3000.
+To deploy the website, we used https://www.heroku.com/ for hosting and MongoDB Atlas for the database (https://www.mongodb.com/cloud/atlas)
 
-```sh
-npm start
-```
+Here is the link to our website: https://tdtu-noticlone.herokuapp.com/
 
-### Generator
-
-To use the generator, look at [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme). There is a global executable to run the generator in that package, aliased as `standard-readme`.
 
 ## Badge
 
