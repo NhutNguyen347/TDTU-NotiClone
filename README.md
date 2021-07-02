@@ -27,7 +27,7 @@ This repository contains:
 - 	- [Function 3](#funtion)		
 - 	- [Interface ](#interface)
 - [Usage](#usage)
-	- [Generator](#generator)
+
 - [Badge](#badge)
 - [Example Readmes](#example-readmes)
 - [Related Efforts](#related-efforts)
