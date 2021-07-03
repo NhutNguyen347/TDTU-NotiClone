@@ -102,7 +102,7 @@
     }
 
     .job_descp iframe {
-        width: 458px;
+        width: 100%;
         height: auto;
     }
 }

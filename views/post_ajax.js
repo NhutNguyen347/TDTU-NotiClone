@@ -3,6 +3,8 @@ $(document).ready(() => {
         //stop submit the form, we will post it manually.
         event.preventDefault();
         doAjax();
+        // auto click on close button
+        $('#close-button').click()
     });
 });
 
