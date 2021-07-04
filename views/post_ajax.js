@@ -1,22 +1,34 @@
+// ============================ For Students posts =================================
 $(document).ready(() => {
     $("#postButton").click((event) => {
         //stop submit the form, we will post it manually.
         event.preventDefault();
-        doAjax();
+        doAjax("/index");
+        // auto click on close button
+        $('#close-button').click()
+    });
+});
+
+// =========================== For Dean noti posts =================================
+$(document).ready(() => {
+    $("#postButton_dean").click((event) => {
+        //stop submit the form, we will post it manually.
+        event.preventDefault();
+        doAjax("/dean_index");
         // auto click on close button
         $('#close-button').click()
     });
 });
 
 // For re-usability of delete and edit, we need to bind post id to each posts too
-function doAjax() {
+function doAjax(route) {
 	var form = $('#postForm')[0];
 	var data = new FormData(form);
 	
     $.ajax({
         type: "POST",
         enctype: 'multipart/form-data',
-        url: "/index",
+        url: route,
         data: data,
         processData: false, //prevent jQuery from automatically transforming the data into a query string
         contentType: false,
@@ -218,6 +230,51 @@ $('#cmtForm[post_id="'+post_id+'"]').ready(function(){
     })
 })  
 
+// ================================ Comment posting for dean side ==================
+$('#cmtForm[post_id="'+post_id+'"]').ready(function(){
+    $(this).on('click', '#cmtButton_dean', function(e){
+        
+        post_id = $(this).parent().find('#cmtButton_dean').attr("post_id")
+    
+        var form = $('#cmtForm[post_id="'+post_id+'"]')[0];
+        var data = new FormData(form);
+        
+        console.log(form)
+        data.append("post_id", post_id)
+
+        $.ajax({
+            type: "POST",
+            url: "/comment_dean",
+            data: {post_id: data.get("post_id"), comment: data.get("comment")},
+            success: (data) => {
+                html = `
+                    <div class="comment-list" comment_id="${data._id}">
+                        <div class="bg-img">
+                            <img style="width: 40px; height: 40px;" src="${data.userImage}" alt="">
+                        </div>
+                        <div class="comment">
+                            <h3>${data.displayname}</h3>
+                            <p>${data.content}</p>
+                        </div>
+                        <div class="ed-opts">
+                            <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
+                            <ul class="ed-options" style="width: 130px;">
+                                <li><a id="delComment" href="#" value="${data._id}" title="">Delete</a></li>
+                            </ul>
+                        </div>
+                    </div><!--comment-list end-->
+                `
+                $('.posty[post_id='+post_id+'] .comment-sec ul li').append(
+                    $('<div></div>').html(html)
+                )
+            }
+        })
+
+        e.preventDefault()
+    })
+})  
+
+
 //================================= Comment delete ================================
 $(document).on("click", "#delComment", function(e){
     e.preventDefault()
@@ -227,6 +284,30 @@ $(document).on("click", "#delComment", function(e){
     $.ajax({
         type: "POST",
         url: "/deleteComment",
+        data: {comment_id: comment_id},
+        success: (data) => {      
+            if(data){
+                // Remove the whole div contains new post 
+                $('div[comment_id="'+comment_id+'"]').remove()
+            }else{
+                console.log('data cannot be deleted');
+            }
+        },
+        error: (e) => {
+            console.log('Error')
+        }
+    });
+})
+
+//================================= Comment delete on dean side ================================
+$(document).on("click", "#delComment_dean", function(e){
+    e.preventDefault()
+    
+    comment_id = $(this).parent().find('#delComment_dean').attr("value")
+    
+    $.ajax({
+        type: "POST",
+        url: "/deleteComment_dean",
         data: {comment_id: comment_id},
         success: (data) => {      
             if(data){

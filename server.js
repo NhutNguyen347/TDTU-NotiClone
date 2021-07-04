@@ -104,8 +104,12 @@ app.all('/search', index)
 app.all('/profile', user_profile)
 // For comment posting and processing
 app.all('/comment', index)
+// For comment posting and processing on dean side
+app.all('/comment_dean',dean_index)
 // Delete Comment
 app.all('/deleteComment', user_profile)
+// Delete comment on dean side
+app.all('/deleteComment_dean', dean_index)
 // Report error
 app.all('/sendMessage', report)
 

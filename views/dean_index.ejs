@@ -220,65 +220,7 @@
 											</li>
 										</ul>
 									</div><!--user-data end-->
-									<div class="suggestions full-width">
-										<div class="sd-title">
-											<h3>Suggestions</h3>
-											<i class="la la-ellipsis-v"></i>
-										</div><!--sd-title end-->
-										<div class="suggestions-list">
-											<div class="suggestion-usd">
-												<img src="http://via.placeholder.com/35x35" alt="">
-												<div class="sgt-text">
-													<h4>Jessica William</h4>
-													<span>Graphic Designer</span>
-												</div>
-												<span><i class="la la-plus"></i></span>
-											</div>
-											<div class="suggestion-usd">
-												<img src="http://via.placeholder.com/35x35" alt="">
-												<div class="sgt-text">
-													<h4>John Doe</h4>
-													<span>PHP Developer</span>
-												</div>
-												<span><i class="la la-plus"></i></span>
-											</div>
-											<div class="suggestion-usd">
-												<img src="http://via.placeholder.com/35x35" alt="">
-												<div class="sgt-text">
-													<h4>Poonam</h4>
-													<span>Wordpress Developer</span>
-												</div>
-												<span><i class="la la-plus"></i></span>
-											</div>
-											<div class="suggestion-usd">
-												<img src="http://via.placeholder.com/35x35" alt="">
-												<div class="sgt-text">
-													<h4>Bill Gates</h4>
-													<span>C & C++ Developer</span>
-												</div>
-												<span><i class="la la-plus"></i></span>
-											</div>
-											<div class="suggestion-usd">
-												<img src="http://via.placeholder.com/35x35" alt="">
-												<div class="sgt-text">
-													<h4>Jessica William</h4>
-													<span>Graphic Designer</span>
-												</div>
-												<span><i class="la la-plus"></i></span>
-											</div>
-											<div class="suggestion-usd">
-												<img src="http://via.placeholder.com/35x35" alt="">
-												<div class="sgt-text">
-													<h4>John Doe</h4>
-													<span>PHP Developer</span>
-												</div>
-												<span><i class="la la-plus"></i></span>
-											</div>
-											<div class="view-more">
-												<a href="#" title="">View More</a>
-											</div>
-										</div><!--suggestions-list end-->
-									</div><!--suggestions end-->
+
 									<div class="tags-sec full-width">
 										<div class="cp-sec">
 											<img src="images/tdt_logo_white.png" alt="">
@@ -362,7 +304,7 @@
                                                                                 <div class="ed-opts">
                                                                                     <a href="#" title="" class="ed-opts-open"><i class="la la-ellipsis-v"></i></a>
                                                                                     <ul class="ed-options" style="width: 130px;">
-                                                                                        <li><a id="delComment" href="#" value="<%= comment._id%>" title="">Delete</a></li>
+                                                                                        <li><a id="delComment_dean" href="#" value="<%= comment._id%>" title="">Delete</a></li>
                                                                                     </ul>
                                                                                 </div>
                                                                             </div><!--comment-list end-->
@@ -380,7 +322,7 @@
                                                             <div class="comment_box">
                                                                 <form id="cmtForm" method="POST" post_id="<%= row._id%>">
                                                                     <input type="text" placeholder="Post your comment" name="comment">
-                                                                    <button class="submit" id="cmtButton" type="submit" post_id="<%= row._id%>">Send</button>
+                                                                    <button class="submit" id="cmtButton_dean" type="submit" post_id="<%= row._id%>">Send</button>
                                                                 </form>
                                                             </div>
 
@@ -400,101 +342,7 @@
 									</div><!--posts-section end-->
 								</div><!--main-ws-sec end-->
 							</div>
-							<div class="col-lg-3 pd-right-none no-pd">
-								<div class="right-sidebar">
-									<!--widget-about end-->
-									<div class="widget widget-jobs">
-										<div class="sd-title">
-											<h3>Top Jobs</h3>
-											<i class="la la-ellipsis-v"></i>
-										</div>
-										<div class="jobs-list">
-											<div class="job-info">
-												<div class="job-details">
-													<h3>Senior Product Designer</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-												</div>
-												<div class="hr-rate">
-													<span>$25/hr</span>
-												</div>
-											</div><!--job-info end-->
-											<div class="job-info">
-												<div class="job-details">
-													<h3>Senior UI / UX Designer</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-												</div>
-												<div class="hr-rate">
-													<span>$25/hr</span>
-												</div>
-											</div><!--job-info end-->
-											<div class="job-info">
-												<div class="job-details">
-													<h3>Junior Seo Designer</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-												</div>
-												<div class="hr-rate">
-													<span>$25/hr</span>
-												</div>
-											</div><!--job-info end-->
-											<div class="job-info">
-												<div class="job-details">
-													<h3>Senior PHP Designer</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-												</div>
-												<div class="hr-rate">
-													<span>$25/hr</span>
-												</div>
-											</div><!--job-info end-->
-											<div class="job-info">
-												<div class="job-details">
-													<h3>Senior Developer Designer</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-												</div>
-												<div class="hr-rate">
-													<span>$25/hr</span>
-												</div>
-											</div><!--job-info end-->
-										</div><!--jobs-list end-->
-									</div><!--widget-jobs end-->
-									<div class="widget widget-jobs">
-										<div class="sd-title">
-											<h3>Most Viewed This Week</h3>
-											<i class="la la-ellipsis-v"></i>
-										</div>
-										<div class="jobs-list">
-											<div class="job-info">
-												<div class="job-details">
-													<h3>Senior Product Designer</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-												</div>
-												<div class="hr-rate">
-													<span>$25/hr</span>
-												</div>
-											</div><!--job-info end-->
-											<div class="job-info">
-												<div class="job-details">
-													<h3>Senior UI / UX Designer</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-												</div>
-												<div class="hr-rate">
-													<span>$25/hr</span>
-												</div>
-											</div><!--job-info end-->
-											<div class="job-info">
-												<div class="job-details">
-													<h3>Junior Seo Designer</h3>
-													<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit..</p>
-												</div>
-												<div class="hr-rate">
-													<span>$25/hr</span>
-												</div>
-											</div><!--job-info end-->
-										</div><!--jobs-list end-->
-									</div><!--widget-jobs end-->
-									
-									</div>
-								</div><!--right-sidebar end-->
-							</div>
+							
 						</div>
 					</div><!-- main-section-data end-->
 				</div> 
@@ -582,7 +430,7 @@
                             
 							<div class="col-lg-12">
 								<ul>
-									<li><button id="postButton" class="submit" type="submit" value="post">Post</button></li>
+									<li><button id="postButton_dean" class="submit" type="submit" value="post">Post</button></li>
 								</ul>
 							</div>
 						</div>
