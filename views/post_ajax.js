@@ -52,7 +52,7 @@ function doAjax(route) {
                     $(this).find('#username').text(data.username)
                     $(this).find('#main-profile-pic').attr("src", data.img)
                     $(this).find('#title').text(data.title)
-                    $(this).find('#description ').text(data.description)
+                    $(this).find('#description ').html('<pre>'+data.description+'</pre>')
                     $(this).find('#commentsec-pic').attr('src', data.img)
     
                     // Bind post_id to div posty of each new post - AJAX add only

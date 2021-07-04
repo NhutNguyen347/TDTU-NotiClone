@@ -5,6 +5,7 @@ postSchema = new Schema( {
 	title: String,
     description: String,
     img:String,
+    post_img: String,
     url_video:String,
     comments: [
         {

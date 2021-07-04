@@ -61,12 +61,17 @@ Google” (https://developers.google.com/identity/sign-in/web/sign-in). So the p
 Only accounts whose email is @student.tdtu.edu.vn are allowed to log in to the system. When the student successfully logged in
 For the first time, the system will create an account for the student in the database based on the information obtained from the Google account.
 
-![alt text](https://scontent-hkt1-2.xx.fbcdn.net/v/t1.15752-9/207803636_169745245180448_1207026719217597573_n.png?_nc_cat=108&ccb=1-3&_nc_sid=ae9488&_nc_ohc=H-K2fLjnruQAX-PBFQx&_nc_ht=scontent-hkt1-2.xx&oh=c5d3897068f4fa30acf1670ddfbde177&oe=60E6EACC)
+<p float="left">
+  <img src="https://scontent-hkt1-2.xx.fbcdn.net/v/t1.15752-9/207803636_169745245180448_1207026719217597573_n.png?_nc_cat=108&ccb=1-3&_nc_sid=ae9488&_nc_ohc=H-K2fLjnruQAX-PBFQx&_nc_ht=scontent-hkt1-2.xx&oh=c5d3897068f4fa30acf1670ddfbde177&oe=60E6EACC" width="400" />
+  <img src="https://scontent-hkt1-2.xx.fbcdn.net/v/t1.15752-9/208303885_397460385010345_974051759622177465_n.png?_nc_cat=108&ccb=1-3&_nc_sid=ae9488&_nc_ohc=gKgv_dbt5EcAX_RCzAf&_nc_ht=scontent-hkt1-2.xx&oh=508e7b73f389a3176ac37652d47938e3&oe=60E62FFF" width="400" /> 
+</p>
+
+<!-- ![alt text]()
 <h3 align="center">Student login screen</h3>
 
 
-![alt text](https://scontent-hkt1-2.xx.fbcdn.net/v/t1.15752-9/208303885_397460385010345_974051759622177465_n.png?_nc_cat=108&ccb=1-3&_nc_sid=ae9488&_nc_ohc=gKgv_dbt5EcAX_RCzAf&_nc_ht=scontent-hkt1-2.xx&oh=508e7b73f389a3176ac37652d47938e3&oe=60E62FFF)
-<h3 align="center">Login screen of admin and dean</h3>
+![alt text]()
+<h3 align="center">Login screen of admin and dean</h3> -->
 
 
 ### Function 2: Create an account and update account information :crystal_ball: :key: 🔓 

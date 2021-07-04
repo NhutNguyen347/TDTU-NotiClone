@@ -5512,3 +5512,8 @@ a:hover {
     max-height: 150px;
     overflow-y: auto;
 }
+
+/* Preserve line break in postForm */
+#postForm textarea{
+    white-space: pre-wrap;
+}

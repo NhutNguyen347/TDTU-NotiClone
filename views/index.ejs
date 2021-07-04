@@ -334,11 +334,11 @@
                                                         <div class="job_descp">
                                                             <h3><%= row.title %></h3>
                                                             <p>
-                                                                <%= row.description %>
+                                                                <pre><%= row.description %></pre>
                                                                 <!-- This is for View more function -->
                                                                 <!-- <a href="#" title="">view more</a> -->
                                                             </p>
-                                                            <img <% if(row.img == null){ %>style="display: none;"<% } %> src=<%= row.img %> alt="">
+                                                            <img <% if(row.post_img == null){ %>style="display: none;"<% } %> src=<%= row.post_img %> alt="">
                                                         
                                                             <iframe <% if(row.url_video == null){ %>style="display: none;"<% } %> width="500" height="300" src="https://www.youtube.com/embed/<%= row.url_video %>  " frameborder="0">
                                                             </iframe>

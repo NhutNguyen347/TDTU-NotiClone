@@ -74,6 +74,8 @@ router.get('/dean_index' , (req , res)=>{
 
 // Call Youtube video IDs getter
 var idGetter = require('../functions/youtubeID')
+
+// ============================== POSTING SECTION ======================================
 // For posting
 router.post('/dean_index', upload.single("postImage"), (req , res)=>{
     // Get post body
@@ -86,6 +88,7 @@ router.post('/dean_index', upload.single("postImage"), (req , res)=>{
 
     var new_post = undefined
     // Handler for undefined field
+    console.log(postData)
     Object.keys(postData).forEach(key => postData[key] === undefined ? delete postData[key] : {});
     // Obj filter
     if(postData.post_img !== undefined){
@@ -112,6 +115,7 @@ router.post('/dean_index', upload.single("postImage"), (req , res)=>{
     })
 })
 
+// ============================= COMMENT SECTION ======================================
 //========================== Comment posting on dean side ==============================
 router.post('/comment_dean', (req, res) => {
     // Get image and displayname from Profile
