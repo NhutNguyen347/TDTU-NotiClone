@@ -152,13 +152,14 @@ $('#editForm').ready(function(){
                 $(document).ready(function(){
                     // Change title and description from posts 
                     $('.posty[post_id="'+post_id+'"]').find('.job_descp > h3').text(data.title)
-                    $('.posty[post_id="'+post_id+'"]').find('.job_descp > p').text(data.description)
-                    // post update for posts loaded by ejs
+                    // Remove old pre tag to append a new one
+                    $('.posty[post_id="'+post_id+'"] .job_descp pre').remove()
+                    $('.posty[post_id="'+post_id+'"] .job_descp #description_p').html('<pre>'+data.description+'</pre>')
                     // This is to check if img is there or not, this is for post by ejs
-                    if($('.posty[post_id="'+post_id+'"]').find('.job_descp > img').ready() && data.img !== undefined){
+                    if($('.posty[post_id="'+post_id+'"]').find('.job_descp > img').ready() && data.post_img !== undefined){
                         // Remove style of the current post without img, it will skip if there is no attr named style, kinda tidy
                         $('.posty[post_id="'+post_id+'"]').find('.job_descp > img').removeAttr("style")
-                        $('.posty[post_id="'+post_id+'"]').find('.job_descp > img').attr("src", data.img)
+                        $('.posty[post_id="'+post_id+'"]').find('.job_descp > img').attr("src", data.post_img)
                     }
                 
                     // This is to check if iframe is there or not, this is for post by ejs

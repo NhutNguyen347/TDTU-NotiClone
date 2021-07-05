@@ -131,6 +131,7 @@ router.post('/deletePost', (req, res) => {
     })
 })
 
+// Show all post infor into edit post form
 router.post('/editPost', (req, res) => {
     var post_id = req.body.post_id
 
@@ -149,7 +150,7 @@ router.post('/submitEdit', upload.single("postImage"), (req , res)=>{
 		title: req.body.title,
 		description: req.body.description,
         url_video: idGetter.ybgetID(req.body.url_video),
-		img: req.file
+		post_img: req.file
 	};
 
     // Store post_id 
@@ -160,12 +161,12 @@ router.post('/submitEdit', upload.single("postImage"), (req , res)=>{
         delete postData.url_video
     }
     // If image is undefined 
-    if(postData.img === undefined){
-        delete postData.img
+    if(postData.post_img === undefined){
+        delete postData.post_img
     }
     // If image is not undefined
-    if(postData.img !== undefined){
-        postData.img = postData.img.path
+    if(postData.post_img !== undefined){
+        postData.post_img = postData.post_img.path
     }
 
     // Remove post_id from postData
