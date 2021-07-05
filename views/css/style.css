@@ -699,6 +699,8 @@ main {
 	float: left;
 	width: 100%;
 	padding: 60px 0;
+    background: url("https://i.ibb.co/2qFxNBq/cool-background.png") no-repeat center;
+    background-size: cover;
 }
 .main-section {
 	float: left;

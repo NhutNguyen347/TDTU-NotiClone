@@ -128,6 +128,8 @@ To see how the specification has been applied, see the [example-readmes](example
 - [Art of Readme](https://github.com/noffle/art-of-readme) - 💌 Learn the art of writing quality READMEs.
 - [open-source-template](https://github.com/davidbgk/open-source-template/) - A README template to encourage open-source contributions.
 
+## Links for use
+- For [nice background ideas](https://coolbackgrounds.io/), I took one from this
 ## Maintainers
 
 [@NhutNguyen236](https://github.com/NhutNguyen236).
