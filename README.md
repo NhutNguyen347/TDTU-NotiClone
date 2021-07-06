@@ -62,8 +62,8 @@ Only accounts whose email is @student.tdtu.edu.vn are allowed to log in to the s
 For the first time, the system will create an account for the student in the database based on the information obtained from the Google account.
 
 <p float="left">
-  <img src="https://scontent-hkt1-2.xx.fbcdn.net/v/t1.15752-9/207803636_169745245180448_1207026719217597573_n.png?_nc_cat=108&ccb=1-3&_nc_sid=ae9488&_nc_ohc=H-K2fLjnruQAX-PBFQx&_nc_ht=scontent-hkt1-2.xx&oh=c5d3897068f4fa30acf1670ddfbde177&oe=60E6EACC" width="400" />
-  <img src="https://scontent-hkt1-2.xx.fbcdn.net/v/t1.15752-9/208303885_397460385010345_974051759622177465_n.png?_nc_cat=108&ccb=1-3&_nc_sid=ae9488&_nc_ohc=gKgv_dbt5EcAX_RCzAf&_nc_ht=scontent-hkt1-2.xx&oh=508e7b73f389a3176ac37652d47938e3&oe=60E62FFF" width="400" /> 
+  <img src="https://scontent.fdad3-3.fna.fbcdn.net/v/t1.15752-9/204147105_335465394912207_4202654273853069361_n.png?_nc_cat=100&ccb=1-3&_nc_sid=ae9488&_nc_ohc=L2zrougH1XoAX_17hyW&_nc_ht=scontent.fdad3-3.fna&oh=b9af96f41431c780013c8b3b34959881&oe=60E92234" width="480" />
+  <img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/208909619_247825483440785_4429028110592208835_n.png?_nc_cat=101&ccb=1-3&_nc_sid=ae9488&_nc_ohc=Iu_s8LbGAqkAX-LJRRW&_nc_ht=scontent-hkg4-1.xx&oh=0981ab025841e9a6e873a58dfd195b49&oe=60E4AF37" width="480" /> 
 </p>
 
 <!-- ![alt text]()
@@ -88,7 +88,7 @@ picture).
 ### Function 3: Content Management :straight_ruler:  :pencil2: :books:
 
 Students have the right to post  (like facebook, post on their own wall). When students post articles, they can include images or videos (only videos from youtube ). All student posts are public and can be seen by others:
-![alt text](https://scontent-hkg4-2.xx.fbcdn.net/v/t1.15752-9/214170229_420025052394546_4349495172838682064_n.png?_nc_cat=110&ccb=1-3&_nc_sid=ae9488&_nc_ohc=A5AAIqaNc00AX_uEydz&_nc_ht=scontent-hkg4-2.xx&oh=6c84f79338b23d5adcb434f5d699cea8&oe=60E7BBAE)
+![alt text](https://scontent-hkg4-2.xx.fbcdn.net/v/t1.15752-9/214170229_420025052394546_4349495172838682064_n.png?_nc_cat=110&ccb=1-3&_nc_sid=ae9488&_nc_ohc=A5AAIqaNc00AX_uEydz&_nc_ht=scontent-hkg4-2.xx&oh=6c84f79338b23d5adcb434f5d699cea8&oe=60E7BBAE )
 
 
 Students can edit and delete content that they have posted. When a post is deleted, the comments related to that post are also deleted.
