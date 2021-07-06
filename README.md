@@ -23,7 +23,7 @@ This repository contains:
 - [Introduce](#introduce)
 - 	- [Purpose](#purpose)
 - 	- [Function 1](#function-1-log-in-see_no_evil-hear_no_evil-sun_with_face)
-- 	- [Function 2](#funtion)
+- 	- [Function 2](#function-2-create-an-account-and-update-account-information-crystal_ball-key-)
 - 	- [Function 3](#funtion)		
 - 	- [Interface ](#interface)
 - [Usage](#usage)
