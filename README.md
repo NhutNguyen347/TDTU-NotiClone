@@ -127,7 +127,8 @@ To see how the specification has been applied, see the [example-readmes](example
 
 - [Art of Readme](https://github.com/noffle/art-of-readme) - 💌 Learn the art of writing quality READMEs.
 - [open-source-template](https://github.com/davidbgk/open-source-template/) - A README template to encourage open-source contributions.
-
+- [particles.js - particles effect that I used in my sign-in page](https://marcbruederlin.github.io/particles.js/)
+- [Cool website that will give you some good particles.js examples](https://vincentgarreau.com/particles.js/) and [this one too](https://particles.js.org/)
 ## Links for use
 - For [nice background ideas](https://coolbackgrounds.io/), I took one from this
 ## Maintainers
