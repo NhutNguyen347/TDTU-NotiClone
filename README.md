@@ -62,8 +62,8 @@ Only accounts whose email is @student.tdtu.edu.vn are allowed to log in to the s
 For the first time, the system will create an account for the student in the database based on the information obtained from the Google account.
 
 <p float="left">
-  <img src="https://scontent.fdad3-3.fna.fbcdn.net/v/t1.15752-9/204147105_335465394912207_4202654273853069361_n.png?_nc_cat=100&ccb=1-3&_nc_sid=ae9488&_nc_ohc=L2zrougH1XoAX_17hyW&_nc_ht=scontent.fdad3-3.fna&oh=b9af96f41431c780013c8b3b34959881&oe=60E92234" width="480" />
-  <img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/208909619_247825483440785_4429028110592208835_n.png?_nc_cat=101&ccb=1-3&_nc_sid=ae9488&_nc_ohc=Iu_s8LbGAqkAX-LJRRW&_nc_ht=scontent-hkg4-1.xx&oh=0981ab025841e9a6e873a58dfd195b49&oe=60E4AF37" width="480" /> 
+  <img src="https://scontent.fdad3-3.fna.fbcdn.net/v/t1.15752-9/204147105_335465394912207_4202654273853069361_n.png?_nc_cat=100&ccb=1-3&_nc_sid=ae9488&_nc_ohc=L2zrougH1XoAX_17hyW&_nc_ht=scontent.fdad3-3.fna&oh=b9af96f41431c780013c8b3b34959881&oe=60E92234" width="400" />
+  <img src="https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/208909619_247825483440785_4429028110592208835_n.png?_nc_cat=101&ccb=1-3&_nc_sid=ae9488&_nc_ohc=Iu_s8LbGAqkAX-LJRRW&_nc_ht=scontent-hkg4-1.xx&oh=0981ab025841e9a6e873a58dfd195b49&oe=60E4AF37" width="400" /> 
 </p>
 
 <!-- ![alt text]()
