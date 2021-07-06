@@ -24,7 +24,7 @@ This repository contains:
 - 	- [Purpose](#purpose)
 - 	- [Function 1](#function-1-log-in-see_no_evil-hear_no_evil-sun_with_face)
 - 	- [Function 2](#function-2-create-an-account-and-update-account-information-crystal_ball-key-)
-- 	- [Function 3](#funtion)		
+- 	- [Function 3](#function-2-create-an-account-and-update-account-information-crystal_ball-key-)		
 - 	- [Interface ](#interface)
 - [Usage](#usage)
 
