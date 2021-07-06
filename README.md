@@ -88,7 +88,7 @@ picture).
 ### Function 3: Content Management :straight_ruler:  :pencil2: :books:
 
 Students have the right to post  (like facebook, post on their own wall). When students post articles, they can include images or videos (only videos from youtube ). All student posts are public and can be seen by others:
-![alt text](https://scontent-hkg4-1.xx.fbcdn.net/v/t1.15752-9/211609747_351952109675876_73019969499302235_n.png?_nc_cat=105&ccb=1-3&_nc_sid=ae9488&_nc_ohc=iycdO4xz2YYAX_IQwx4&tn=0JcI-QG68uJ_S0jT&_nc_ht=scontent-hkg4-1.xx&oh=3bfd58eb4b45e4f1524bd3a7dd443aa5&oe=60E48C4B)
+![alt text](https://scontent-hkg4-2.xx.fbcdn.net/v/t1.15752-9/214170229_420025052394546_4349495172838682064_n.png?_nc_cat=110&ccb=1-3&_nc_sid=ae9488&_nc_ohc=A5AAIqaNc00AX_uEydz&_nc_ht=scontent-hkg4-2.xx&oh=6c84f79338b23d5adcb434f5d699cea8&oe=60E7BBAE)
 
 
 Students can edit and delete content that they have posted. When a post is deleted, the comments related to that post are also deleted.
