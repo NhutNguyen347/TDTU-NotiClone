@@ -188,16 +188,22 @@ router.post('/submitEdit', upload.single("postImage"), (req , res)=>{
 // For students search bar
 router.get('/search',function(req,res){
 
-    // get user infor from User 
-    User.find({email: new RegExp(req.query.key, 'i')}, (err, user) => {
-        if(err) console.log(err)
-        else{
+    // get user infor from User by querying email
+    User.find({email: new RegExp(req.query.key, 'i')}).then(function(user){
+        Profile.find({displayname: new RegExp(req.query.key, 'i'), deanID: {$ne: null}}).then(function(profile){
+            
             var data = []
             for(i = 0; i < user.length; i++){
                 data.push(user[i].email)
             }
+
+            for(i = 0; i < profile.length; i++){
+                data.push(profile[i].displayname)
+            }
+
             res.send(data)
-        }
+        })
+        
     })
 });
 
@@ -229,8 +235,6 @@ router.post('/comment', (req, res) => {
     
         // console.log(postData)
     })
-    
 })
-
 
 module.exports = router
